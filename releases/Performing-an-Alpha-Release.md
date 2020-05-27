@@ -251,8 +251,19 @@ Enable Groovy Script Engine if necessary
 </dependency>
 ```
 
+##### Using the Invoice example in Spring Boot
+
+The Spring Boot Starter - Invoice example integrates the Invoice application with the Camunda Spring Boot Starter. It
+can be found at [https://github.com/camunda/camunda-bpm-examples/tree/master/spring-boot-starter/example-invoice](https://github.com/camunda/camunda-bpm-examples/tree/master/spring-boot-starter/example-invoice).
+
+The example adds the necessary JDBC dependencies, as well as the `application.yaml` configuration to run on one of
+the Camunda-supported databases. By default, H2 will be used, while the rest can be un-commented. 
+
+> Note: the Spring Boot Starter Invoice example will not create the expected Tasklist filters or additional users. If 
+> necessary, these should be created manually through the `application.properties` and the Admin Webapp file.
 
 ### Release Specific Test
+
 According to the implemented feature topics choose some of the new feature to to test them manually.
 If you don't know wich fixes are worth the effort use the following rule of thumb:
 * Prefer UI features as the test coverage is usually lower compared to backend features. Use different browser for the test.
