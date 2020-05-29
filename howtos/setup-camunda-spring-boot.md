@@ -9,7 +9,7 @@
   <camunda.spring.boot.starter.version>3.3.0-SNAPSHOT</camunda.spring.boot.starter.version>
 </properties>
 ```
-Detailed information about spring versions can be found on the Maven Repository page for [Spring-Boot](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot) and [Camunda-Spring-Boot-Starter](https://mvnrepository.com/artifact/org.camunda.bpm.springboot/camunda-bpm-spring-boot-starter)
+Detailed information about spring versions can be found on the [Maven Repository page](https://search.maven.org/) for [Spring-Boot](https://repo1.maven.org/maven2/org/springframework/boot/spring-boot/) and [Camunda-Spring-Boot-Starter](https://repo1.maven.org/maven2/org/camunda/bpm/springboot/camunda-bpm-spring-boot-starter-webapp-ee/)
 - Enable the Groovy script engine if neccessary. Add following configuration to the pom.xml:
 ```xml
 <!-- https://mvnrepository.com/artifact/org.codehaus.groovy/groovy-jsr223 -->
