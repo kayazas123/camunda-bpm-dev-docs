@@ -235,7 +235,6 @@ Change the pom.xml file:
 <properties>
   <camunda.version><release-version>-ee</camunda.version>
   <spring.boot.version>2.1.4.RELEASE</spring.boot.version>
-  <camunda.spring.boot.starter.version>3.3.0-SNAPSHOT</camunda.spring.boot.starter.version>
 </properties>
 ```
 
@@ -259,8 +258,6 @@ can be found at [https://github.com/camunda/camunda-bpm-examples/tree/master/spr
 The example adds the necessary JDBC dependencies, as well as the `application.yaml` configuration to run on one of
 the Camunda-supported databases. By default, H2 will be used, while the rest can be un-commented. 
 
-> Note: the Spring Boot Starter Invoice example will not create the expected Tasklist filters or additional users. If 
-> necessary, these should be created manually through the `application.properties` and the Admin Webapp file.
 
 ### Release Specific Test
 
