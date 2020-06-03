@@ -49,6 +49,7 @@
   * [OpenAPI documentation](https://github.com/camunda/camunda-bpm-platform/tree/master/engine-rest/engine-rest-openapi) (if the documentation exists for that resource)
   * Javadoc on public API
   * [Migration guide](https://docs.camunda.org/manual/latest/update/minor/) for database schema changes and API breaking changes
+* If a commit adds a new module: Is it covered by all necessary CI and release builds? Check [How to Create Maven Modules](../howtos/create-maven-modules.md) guide for what needs to be considered for Maven modules.
 
 # Assigning a reviewer
 

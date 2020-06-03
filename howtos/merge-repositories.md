@@ -121,9 +121,9 @@ git pull --allow-unrelated-histories $remoteName $mergeBranch
 git log --oneline --graph
 ```
 
-## Merge the Maven modules (incomplete)
+## Merge the Maven modules
 
-When merging Java projects, make sure that the Maven modules are covered by the release builds, so that artifacts will become available on Maven central. E.g. for `camunda-bpm-platform`, make sure the new modules are covered by the [sonatype-oss-release profile](https://github.com/camunda/camunda-bpm-platform/blob/7.11.0/pom.xml#L187-L205).
+Check the [Create Maven Modules](./create-maven-modules.md) guide to ensure that the modules are correctly integrated into CI and release builds.
 
 ## Resources
 
