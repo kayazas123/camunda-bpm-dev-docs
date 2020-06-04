@@ -100,7 +100,7 @@ Ask your colleagues to contribute content for any noteworthy features they have 
 - There are no Snapshot dependencies to secondary projects like Spin or Connect ([Release procedure](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/releases/Release-secondary-projects.md)). For that, check [bom](https://github.com/camunda/camunda-bpm-platform/blob/master/bom/pom.xml) for snapshot dependencies (All snapshot dependencies contain the word 'SNAPSHOT' in their name).
 - There are no code problems ([check ci](https://broken.cambpm.camunda.cloud/) section "Master" and "Release")
 - [Release Test Job](https://release.cambpm.camunda.cloud/view/Release-Test/) passed successfully recently
-- Send an email to camundabpm@camunda.com:
+- Post a message to `#cambpm-announcements` and `@cambpm-dri` (INFRA) on Slack:
 ```
 Hey,
 
@@ -189,7 +189,7 @@ For an alpha, the coverage of JDKs, browsers and operating systems is not so imp
 
 ## Conduct Testing
 
-1. Send a message in Slack (or an email to camundabpm@camunda.com) asking the team to participate in manual testing:
+1. Send a message in Slack (#cambpm-internal) asking the team to participate in manual testing:
 ```
 Hey team,
 
@@ -202,8 +202,7 @@ Here is the test release spreadsheet: <link>
 Perform the standard regression test: [Standard Regression Test](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/releases/Performing-an-Alpha-Release.md#standard-regression-test)
 
 ```
-2. Don't forget to make transparent how the communication between testers and you should happen to prevent confusion and miscommunication.
-3. Keep track environments and test results in the test plan sheet.
+2. Keep track environments and test results in the test plan sheet.
 
 ### Standard Regression Test
 1. Download the release artifact from the enterprise download page
@@ -268,7 +267,7 @@ If you don't know wich fixes are worth the effort use the following rule of thum
 * Prefer UI features as the test coverage is usually lower compared to backend features. Use different browser for the test.
 * Prefer features related to customer support issues as our customers expect that these features are working correctly.
 
-If you are satisfied with the release, send an email to camundabpm@camunda.com:
+If you are satisfied with the release, post a message to `#cambpm-announcements` on Slack:
 
 ```
 Hey,
@@ -290,8 +289,8 @@ We have several CI jobs which upload artifacts to Maven Central into their stagi
 
     *For Example:*  
 
-    >org.camunda.bpm:camunda-bom:7.9.0-alpha3  
-    >org.camunda.bpm.webapp:camunda-webapp:7.9.0-alpha3
+    >org.camunda.bpm:camunda-root:7.13.0-alpha5
+	  >org.camunda.bpm.webapp:camunda-webapp:7.13.0-alpha5
 
 5. Click on 'Release' at the menu on top of the list. A window will pop up were you can enter a description but it is not necessary. Activate 'Drop repository after release automatically'. Then proceed.
 6. Done.
