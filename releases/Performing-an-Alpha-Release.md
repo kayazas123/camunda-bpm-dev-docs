@@ -43,7 +43,8 @@ This guide contains links and filters using placeholders. Please replace the pla
 Decide upon the exact date for the release day. How to find the release day:
 * it is always a Friday, except if the Friday is a holiday, then it's the day before (Thursday) and so on.
 * take the last day of the month and find the Friday that is "closest" to that date. Closest means that you have to count the number of days from the last day of the month to the previous/next Friday.
-* Ask the optimize (slack: `@optimize-release-manager`), modeler (slack: `@modeling-release-manager`) and infrastructure (slack: `#infra`) teams if they want to participate in the release presentation
+* Ask the optimize (slack: `@optimize-release-manager`), modeler (slack: `@modeling-release-manager`) and infrastructure (slack: `#infra`) teams if they want to participate in the release presentation. Share a google docs presentation with them in case they want to participate.
+
 
 ## **Release presentation**
 The release presentation is done remotely via Zoom. Create a Zoom meeting for the presentation. Ask Backoffice for a pro account.
@@ -163,7 +164,7 @@ git push origin master
 
 > Review your commit on http://stage.docs.camunda.org/enterprise/download/
 
-> Make sure that the link to the release notes works as expected.
+> Make sure that the link to the release notes works as expected. To generate it, go to [this page](https://app.camunda.com/jira/secure/ReleaseNote.jspa).
 
 
 # Test Release
@@ -181,6 +182,7 @@ For each container (including Spring Boot & Run) one developer should perform a 
   3. To confirm that everything works as expected, go to Portainer, run a container for each image, and check the "Stack Details". You should validate the right version is picked up, and the container is "runnable". Please see the following screenshot:\
    ![Portainer Stack Details](https://raw.githubusercontent.com/camunda/camunda-bpm-dev-docs/master/howtos/img/manually-build-docker-qa-images-portainer-stack-details.png)
      * The step requires a VPN connection. Find all the details here: https://confluence.camunda.com/display/ADMIN/VPN
+     * The how-to for running the containers can be found [here](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/howtos/was-wls-autosetup.md)
 * Provide a test plan sheet as a copy from [the template](https://docs.google.com/spreadsheets/d/1K9xRFix6NFjnFJDVailOYPTkzJyQCA9yIrFcyFtC3KE/edit#gid=1656336280),
 make sure to prepare the server/database combinations to be tested before next step (Conduct Testing). Assign combinations of application servers and databases to devs. Make sure the major servers and database are tested once. It is not necessary to test multiple combinations of those.
 For an alpha, the coverage of JDKs, browsers and operating systems is not so important, so this choice can be left to the devs conducting the test.
