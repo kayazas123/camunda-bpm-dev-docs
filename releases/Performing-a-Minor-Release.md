@@ -6,7 +6,7 @@ PM = Product Manager (Andre Bappert)
 
 EM = Engineering Manager (Thorben Lindhauer)
 
-TL = Tech Lead (Thorben Lindhauer)
+DE = Director of Engineering (Roman Smirnov) 
 
 QA = Michael Schöttes
 
@@ -14,7 +14,9 @@ MKT = marketing@camunda.com
 
 SUP = team-support@camunda.com
 
-INFRA= infra@camunda.com
+INFRA = `@cambpm-dri` in #infra channel on Slack
+
+DEVREL = Developer Relations (Niall Deehan)
 
 Release Manager:
 
@@ -35,58 +37,57 @@ The release procedure itself has 4 phases:
 
 These tasks can be done within the two weeks before the release:
 
-- [ ] [Request the new license book from Ulrike](#request-the-new-license-book) (EM)
-- [ ] [Prepare testing plan](#prepare-test-plan) (* + QA + INFRA)
-- [ ] [Build a Release Candidate](#build-a-release-candidate) (*)
-- [ ] [Test standalone webapps](#test-standalone-webapps) (*)
-- [ ] [Adjust and migrate Getting Started guides](#adjust-and-migrate-getting-started-guides) (*)
-- [ ] [Adjust and migrate Examples](#adjust-and-migrate-examples) (*)
-- [ ] [Adjust and migrate unit testing template](#adjust-and-migrate-unit-testing-template) (*)
-- [ ] [Write Update Guide](#write-update-guide) (*)
-- [ ] [Stage a Blogpost](#stage-the-blog-post) (*)
-- [ ] [Update translations](#update-german-webapp-translations) (*)
-- [ ] [Release all secondary Camunda projects](#release-all-secondary-camunda-projects) (*)
-- [ ] [Update the Entity Relationship Diagrams](#update-the-entity-relationship-diagrams) (*)
-- [ ] Schedule the releases of side projects: [Spring Boot Starter](https://github.com/camunda/camunda-bpm-spring-boot-starter/wiki/Minor-release), [Wildfly Swarm](https://github.com/camunda/camunda-bpm-wildfly-swarm), [JS External Task Client](https://github.com/camunda/camunda-external-task-client-js/wiki/Release-procedure), [Java External Task Client](https://github.com/camunda/camunda-external-task-client-java), [Camunda BPM Assert](https://github.com/camunda/camunda-bpm-assert)
+*  [Request the new license book from Ulrike](#request-the-new-license-book) (EM)
+*  [Prepare testing plan](#prepare-test-plan) (* + QA)
+*  [Build a Release Candidate](#build-a-release-candidate) (*)
+*  [Test standalone webapps](#test-standalone-webapps) (*)
+*  [Adjust and migrate Getting Started guides](#adjust-and-migrate-getting-started-guides) (*)
+*  [Adjust and migrate Examples](#adjust-and-migrate-examples) (*)
+*  [Adjust and migrate unit testing template](#adjust-and-migrate-unit-testing-template) (*)
+*  [Write Update Guide](#write-update-guide) (*)
+*  [Stage a blog post](#stage-the-blog-post) (*)
+*  [Update translations](#update-german-webapp-translations) (*)
+*  [Update Screenshots](#update-screenshots) (*)
+*  [Release all secondary Camunda projects](#release-all-secondary-camunda-projects) (*)
+*  [Update the Entity Relationship Diagrams](#update-the-entity-relationship-diagrams) (*)
+*  [Schedule the releases of side projects](#schedule-the-releases-of-side-projects) (*)
 
 ## [Phase 2: Prepare the Release](#phase-2)
 
 These steps can be done a couple of days before the release:
 
-- [ ] [Check Preconditions](#check-preconditions) (*)
-- [ ] [Trigger the release build](#trigger-the-release-build) (*)
-- [ ] [Test Release](#test-release) (* + QA)
-- [ ] [Stage new version of the docs](#stage-new-version-of-the-docs) (*)
-- [ ] [Create docs stage and release jobs for new branch](#create-docs-stage-and-release-jobs-for-new-branch) (INFRA)
-- [ ] [Adjust docs with new version](#adjust-docs-with-new-version) (*)
-- [ ] [Stage Enterprise Download Page](#stage-enterprise-download-page) (*, QA)
-- [ ] [Stage Community Download Page](#stage-community-download-page) (*)
+*  [Check Preconditions](#check-preconditions) (*)
+*  [Trigger the release build](#trigger-the-release-build) (*)
+*  [Test Release](#test-release) (* + QA)
+*  [Create new branches](#create-new-branches) (*)
+*  [Stage new version of the docs](#stage-new-version-of-the-docs) (*)
+*  [Adjust docs with new version](#adjust-docs-with-new-version) (*)
+*  [Stage Enterprise Download Page](#stage-enterprise-download-page) (*, QA)
+*  [Stage Community Download Page](#stage-community-download-page) (*)
 
 ## [Phase 3: Publish the Release](#phase-3)
 
 This is done on the release day:
 
-- [ ] [Release Jira](#release-jira) (TL, EM)
-- [ ] [Forward Security Reports](#forward-security-reports) (TL, EM)
-- [ ] [Release Maven Central](#release-maven-central) (*)
-- [ ] [Release Javadocs](#release-javadocs) (*)
-- [ ] [Release the Staged Docs](#release-the-staged-docs) (*)
-- [ ] [Push Redirects / URL rewrites adjustments](#push-redirects--url-rewrites-adjustments) (*)
-- [ ] [Adjust Google Custom Search Engine](#adjust-google-custom-search-engine) (PM)
-- [ ] [Release the Getting Started](#release-the-getting-started) (*)
-- [ ] [Release the Enterprise Download Page](#release-the-enterprise-download-page) (*)
-- [ ] [Release the Community Download Page](#release-the-community-download-page) (*)
-- [ ] [Release the Blog Post](#release-the-blog-post) (*)
-- [ ] [Publish the release on Twitter](#publish-the-release-on-twitter) (MKT + PM)
-- [ ] [Send Mailings](#send-mailings) (SUP)
-- [ ] [Make a Forum Announcement](#forum-announcement) (*)
-- [ ] [Improve this guide](#improve-this-guide) (*)
+*  [Release Jira](#release-jira) (EM, DE)
+*  [Forward Security Reports](#forward-security-reports) (EM, DE)
+*  [Release Maven Central](#release-maven-central) (*)
+*  [Release Javadocs](#release-javadocs) (*)
+*  [Release the Staged Docs](#release-the-staged-docs) (*)
+*  [Push Redirects / URL rewrites adjustments](#push-redirects--url-rewrites-adjustments) (*)
+*  [Adjust Google Custom Search Engine](#adjust-google-custom-search-engine) (PM)
+*  [Release the Getting Started](#release-the-getting-started) (*)
+*  [Release the Enterprise Download Page](#release-the-enterprise-download-page) (*)
+*  [Release the Community Download Page](#release-the-community-download-page) (*)
+*  [Release the Blog Post](#release-the-blog-post) (*)
+*  [Publish the release](#publish-the-release) (MKT + SUP + DEVREL)
+*  [Send Release Notice](#send-release-notice) (*)
+*  [Improve this guide](#improve-this-guide) (*)
 
 ## [Phase 4: After the Release](#phase-4)
 
-- [ ] [Camunda BPM Platform code changes](#camunda-bpm-platform-code-changes) (*)
-- [ ] [Camunda CI tasks](#ci-tasks) (INFRA)
-- [ ] [Pick Alpha Release Manager](#pick-alpha-release-manager)
+*  [Camunda BPM Platform code changes](#camunda-bpm-platform-code-changes) (*)
+*  [Pick Alpha Release Manager](#pick-alpha-release-manager)
 
 ***
 
@@ -97,7 +98,7 @@ This is done on the release day:
 At latest two weeks before the release, create a CAM ticket to update the license book and assign it to the Tech Lead. The Tech Lead should then perform the following steps:
 
 1. Announce to the team that any subsequent dependency updates until code freeze must be synced with Tech Lead
-1. Determine all depencies with missing licensing information. Check the build artifact `new-dependencies.txt` of https://ci.cambpm.camunda.cloud/job/7.13/job/7.13-EE-platform-DISTRO/ (replace with appropriate version).
+1. Determine all depencies with missing licensing information. Check the build artifact `new-dependencies.txt` of https://ci.cambpm.camunda.cloud/job/7.14/job/7.14-EE-platform-DISTRO/ (replace with appropriate version).
 1. Contribute the project information for every dependency where it is missing. Check the readme of https://github.com/camunda/camunda-bpm-platform-ee/tree/master/distro/license-book-generator for how to do that.
 1. Send a list of all libraries with missing licensing information and their project homes to Legal
 1. Once Legal provides the missing licensing information, update it in the license-book-generator sources
@@ -109,7 +110,7 @@ At latest two weeks before the release, create a CAM ticket to update the licens
 
 Set a meeting with QA to prepare a test plan for the manual testing of the release:
 1. Pick which features to test by looking at the [Confluence Roadmap list](https://app.camunda.com/confluence/display/camBPM/Roadmap+Camunda+BPM)
-2. Create a (Google/Airtable) spreadsheet to be used for keeping track of the testing process (you can use [this spreadsheet](https://docs.google.com/spreadsheets/d/1Z_f7zX2ikmiqxq6i3a2N1bBcSPTj9SYdWxT9jZm3fx0/edit?usp=sharing) as a template)
+2. Create a (Google/Airtable) spreadsheet to be used for keeping track of the testing process (you can use [this spreadsheet](https://docs.google.com/spreadsheets/d/1_xXKKN-JmnmnFWRl9pnXdNXzl3sCkOf_tfu-zJnMdHU/edit?usp=sharing) as a template)
   * The spreadsheet should include all the features that need to be tested, feature documentation and implementer name
   * The spreadsheet should include an estimated effort (small, medium, large) and all test cases should be divided equally to all team members, e.g. by using round-robin on the different effort levels respecting that the implementer and reviewer should not test again
   * The spreadsheet should include all combinations of environments that should be testetd. Those environments should also be assigned to topics as recommended environments (consider those in the assignment of the topics to testers as well, so that testers have a reasonable amount of environments to set up for their topics).
@@ -138,18 +139,17 @@ and the EE standalone webapps
 for testing.
 
 To test the standalone webapp you need a vanilla version of the application
-servers (without camunda installed). You can download the vanilla distros
-from our nexus:
+servers (without camunda installed). You can download some of the vanilla servers
+directly from the vendors:
 
-- [Tomcat](https://app.camunda.com/nexus/content/groups/public/org/apache/tomcat/tomcat/)
-- [JBoss](https://app.camunda.com/nexus/content/groups/public/org/jboss/as/jboss-as-dist/)
-- [Widlfly](https://app.camunda.com/nexus/content/groups/public/org/wildfly/wildfly-dist/)
+- [Tomcat](http://tomcat.apache.org/)
+- [JBoss](https://jbossas.jboss.org/downloads)
+- [Widlfly](https://wildfly.org/downloads/)
 
 The versions to use can be found in the current [parent
-pom.xml](https://github.com/camunda/camunda-bpm-platform/blob/master/parent/pom.xml#L31-L37).
+pom.xml](https://github.com/camunda/camunda-bpm-platform/blob/master/parent/pom.xml#L41-L43).
 
-To test websphere and weblogic I would suggest to ask INFRA to spin up a docker image in the HQ for testing. An
-alternative would be the developer VM.
+For WebSphere and Weblogic, images are available in our [portainer](http://portainer.camunda.loc:9000/#/templates). Enable "Show container templates" and type "WebSphere" or "Weblogic" in the search bar. Do not use one of the autosetup templates as these already ship with Camunda installed.
 
 To deploy the standalone webapp follow the [installation
 guide](http://stage.docs.camunda.org/manual/develop/installation/standalone-webapplication/#deploy). Normally
@@ -181,18 +181,26 @@ Keep in mind that the platform version in the `pom.xml` files should be adjusted
 
 ## Adjust and migrate Examples
 
-Test and adjust the existing Camunda BPM Examples for the new minor release. Do the following steps for this.
+Test and adjust the existing Camunda BPM Examples for the new minor release. 
+For each of the following repositories
+* https://github.com/camunda/camunda-bpm-examples
+* https://github.com/camunda/camunda-external-task-client-js/tree/master/examples
+* https://github.com/camunda/camunda-external-task-client-java/tree/master/examples
+* https://github.com/camunda/camunda-bpm-assert/tree/master/examples
 
-* Clone the Git Repository https://github.com/camunda/camunda-bpm-examples
-* Create a new branch for the minor release (ex. 7.13) to push all the changes to the branch and merge it to master when the new minor release exists. This allow to have the examples runnable until the release is finished.
+perform the following steps:
+
+* Clone the Git Repository
+* If the branch does not already exist, create a new branch for the minor release (ex. 7.14) to push all the changes to the branch and merge it to master when the new minor release exists. This allows to have the examples runnable until the release is finished.
 * Adjust the `camunda-version` in the Maven `pom.xml` of the current example
 * Follow the README of the current example to test it
-* Adjust the links of the README to point to the new version of the docs (ex.: `https://docs.camunda.org/manual/7.13`)
+* Adjust the links of the README to point to the new version of the docs (ex.: `https://docs.camunda.org/manual/7.14`)
 * Push the changes to the master/minor release branch
 * Do the steps before for all examples
 * Squash all the commits and merge the release branch to master
-* Add a new (7.X) tag to the overview [README](https://github.com/camunda/camunda-bpm-examples/blob/master/README.md)
+* Only for examples repository: Add a new (7.X) tag to the overview [README](https://github.com/camunda/camunda-bpm-examples/blob/master/README.md)
 * Create the 7.X tag for the minor release version on the squashed commit
+* Create a release on GitHub for the created tag
 * Push the changes to master
 
 ### Changes to the `Java` source files in the examples
@@ -207,39 +215,44 @@ Bump the Camunda version in https://github.com/camunda/camunda-engine-unittest
 
 ## Write Update Guide
 
-Document the steps which are necessary to update from Camunda BPM 7.12.x to 7.13.0 for the different application server.
+Document the steps which are necessary to update from Camunda BPM 7.13.x to 7.14.0 for the different application server.
 
 * Go into the cloned Git repository `camunda-docs-manual`
-* Create a new folder `712-to-713` under `content/minor`
+* Create a new folder `713-to-714` under `content/minor`
 * Describe the different steps for the current application server in an own file.
+
+Usually it is okay to copy + paste the guides from the previous version and update the list of artifacts in the guide. (i.e. make sure all artifacts that changed between the previous release and the current release are included in the guide)
 
 ## Stage the blog post
 
-#### 1. Update the 'master' and create a branch 7.13.0 on the [blog repository](https://github.com/camunda/blog.camunda.org).
+#### 1. Update the 'master' and create a branch 7.14.0 on the [blog repository](https://github.com/camunda/blog.camunda.org).
 
 ```
 git checkout master
 git pull origin master
-git checkout -b 7.13.0
+git checkout -b 7.14.0
 ```
 
-#### 2. Create a file 'camunda-bpm-7130-released.md' at /content/post/2020/05/ and push it to the repo.
+#### 2. Create a file 'camunda-bpm-7140-released.md' at /content/post/<year>/<month>/ and push it to the repo.
 
 ```
-git add /content/post/2020/05/camunda-bpm-7130-released.md
+git add /content/post/<year>/<month>/camunda-bpm-7140-released.md
 git commit
-git push origin 7.13.0
+git push origin 7.14.0
 ```
 
-#### 3. Ask TL to write the blog post.
+#### 3. Ask EM to write the blog post. 
+
+It should be ready two days before the release presentation and submitted to marketing for proof reading. Marketing can also share information on the publishing date for the post.
+
 
 ## Update german Webapp translations
+
 Ask a native-german colleague to update the [german translations](https://github.com/camunda/camunda-webapp-translations).
 
 ## Update Screenshots
 
 Generate up-to-date screenshots according to the [HowTo](../howtos/update-screenshots.md).
-
 
 ## Release all secondary Camunda projects
 
@@ -255,12 +268,24 @@ When releasing a secondary project, other secondary projects might have cross-re
 ## Update the Entity Relationship Diagrams
 
 1. Go to the [database upgrade scripts](https://github.com/camunda/camunda-bpm-platform/tree/master/engine/src/main/resources/org/camunda/bpm/engine/db/create) and check what changed in the database structure.
-2. Create ERDs for the new version by copying the last version ERDs (ex. erd-bpmn_7.13.mwb from a copy of erd-bpmn_7.12.mwb). Then update the new ERDs accordingly.
+2. Create ERDs for the new version by copying the last version ERDs (ex. erd-bpmn_7.14.mwb from a copy of erd-bpmn_7.13.mwb). Then update the new ERDs accordingly.
   * The ERD files can be found in the camunda-docs-manual repo [here](https://github.com/camunda/camunda-docs-manual/tree/master/content/user-guide/process-engine/erd-project).
   * They can be edited through the [MySQL Workbench](https://www.mysql.com/products/workbench/) tool.
-  * After they are edited, generate the appropriate `.SVG` images for each ERD and put them in the `img` directory [here](https://github.com/camunda/camunda-docs-manual/tree/master/content/user-guide/process-engine/img). Ex. for `erd-bpmn_7.13.mwb` there should be a `erd_713_bpmn.svg` image.
+  * After they are edited, generate the appropriate `.SVG` images for each ERD and put them in the `img` directory [here](https://github.com/camunda/camunda-docs-manual/tree/master/content/user-guide/process-engine/img). Ex. for `erd-bpmn_7.14.mwb` there should be a `erd_714_bpmn.svg` image.
   * Finally, update the image links in the [database.md page|https://github.com/camunda/camunda-docs-manual/blob/master/content/user-guide/process-engine/database.md]
 3. Check if everything looks good after you make the adjustments in the [documentation](https://stage.docs.camunda.org/manual/latest/user-guide/process-engine/database/#entity-relationship-diagrams).
+
+## Schedule the releases of side projects
+
+Check if a new version of each of the side projects needs to be released and schedule the release date. Check for dependencies to artifacts that might get released later (e.g. engine) and be sure to release those dependencies first.
+
+The side projects are:
+
+* [JS External Task Client](https://github.com/camunda/camunda-external-task-client-js/wiki/Release-procedure)
+* [Java External Task Client](https://github.com/camunda/camunda-external-task-client-java)
+* [Camunda BPM Assert](https://github.com/camunda/camunda-bpm-assert)
+
+For the release follow this [procedure](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/releases/Release-secondary-projects.md).
 
 -----
 
@@ -272,13 +297,13 @@ When releasing a secondary project, other secondary projects might have cross-re
 - There are no code problems ([check ci](https://broken.cambpm.camunda.cloud/) section "master")
 - [Release Test Job](https://release.cambpm.camunda.cloud/view/Release-Test/) passed successfully recently
 - There are no code tickets in review or test
-- Send an email to camundabpm@camunda.com:
+- Post a message to `#cambpm-announcements` and `@cambpm-dri` (INFRA) on Slack:
 ```
-Hey,
+Hey Team,
 
 please stop pushing to master since we are going to build the 7.x release.
 ```
-*Keep in mind that staged artifacts are kept up to 6 days, arrange the build no more than 6 days before the official release.
+*Keep in mind that staged artifacts are kept up to 6 days, arrange the build no more than 6 days before the official release. This information is based on previous observations and not an official number. When in doubt release the artifacts rather sooner than later.
 
 ## Trigger the Release Build
 
@@ -293,14 +318,59 @@ Wait for the following jobs to turn green before continuing with the next step:
 
 ## Test Release
 
-Let the team and QA test the release with the [Standard Regression Test](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/releases/Performing-an-Alpha-Release.md#standard-regression-test) and paying attention to all changes since the release candidate. If everything is satisfying with the release, send an email to camundabpm@camunda.com:
+Let the team and QA test the [released artifacts](https://downloads.camunda.cloud/enterprise-release/camunda-bpm/) with the [test plan](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/releases/Performing-a-Minor-Release.md#prepare-test-plan) including the [standard regression test](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/releases/Performing-an-Alpha-Release.md#standard-regression-test) and paying attention to all changes since the release candidate.
+
+If everything is satisfying with the release, send a message to `#cambpm-announcements` on Slack:
 
 ```
-Hey,
+Hey Team,
 
-the release test passed, you can commit to master again :)
+the release test passed, you can commit to master again in case of approved bug fixes :)
 
 ```
+
+## Create new branches
+
+In order to have all the branches ready once the release is built we need to trigger the respective jobs before triggering the release job.
+
+If anything goes wrong, ask the `@cambpm-dri` in the #infra channel on Slack for help.
+
+### Create maintenance branches
+
+Trigger the creation of the maintenance branches with [this job](https://release.cambpm.camunda.cloud/view/all/job/maintenance/job/RELEASE-create-camunda-bpm-maintenance-branch/).
+Example for Parameters:
+```
+TAG_VERSION = 7.14.0
+DEVELOPMENT_VERSION = 7.14.1-SNAPSHOT
+BRANCH_VERSION = 7.14
+PUSH_REMOTE = true
+```
+
+Check that new branches were created in the following repositories:
+* https://github.com/camunda/camunda-bpm-platform-maintenance
+* https://github.com/camunda/camunda-bpm-platform-ee-maintenance
+* https://github.com/camunda/docker-camunda-bpm-platform
+* https://github.com/camunda/camunda-bpm-webapp
+* https://github.com/camunda/camunda-webapp-translations
+
+### Create new minor version jobs
+
+Perform these steps:
+
+* Check out [the repository](https://github.com/camunda-ci/jenkins-job-dsl-seed-jobs)
+* Execute the [add-new-minor-version.sh](https://github.com/camunda-ci/jenkins-job-dsl-seed-jobs/blob/master/add-new-minor-version.sh) script
+* Open a PR in the GitHub repository with the changes made by the script and assign `@cambpm-dri` as reviewer
+* Merge the branch after the review is done
+* After drinking 1 espresso, the new jobs should now appear on https://ci.cambpm.camunda.cloud/view/Docs/
+* Trigger `camunda-docs-manual-stage (7.14, 7.14)` and check the result at http://stage.docs.camunda.org/manual/7.14/
+
+### Add new version to the broken board
+
+The [broken board](https://broken.cambpm.camunda.cloud/) should also display the new version jobs. To do that, perform these steps:
+* Add the new version to [camunda-ci-dashboard.hcl](https://github.com/camunda/infra-core/blob/master/camunda-ci/kustomize/cambpm/broken.cambpm.camunda.cloud/config/camunda-ci-dashboard.hcl)
+* Open a PR to the `stage` branche in the GitHub repository with the added version and assign `@cambpm-dri` as reviewer
+* Merge the branch after the review is done
+* Check that the new version is displayed at the [broken board](https://broken.cambpm.camunda.cloud/)
 
 ## Stage new version of the docs
 
@@ -309,7 +379,7 @@ the release test passed, you can commit to master again :)
 First a new branch needs to be created in the camunda-docs-manual repository
 
 ```sh
-git checkout -b 7.13
+git checkout -b 7.14
 ```
 
 ### Update standalone webapp download links
@@ -323,20 +393,20 @@ On the new branch, bump the version of the standalone webapps as follows:
      <tr>
        <td>Apache Tomcat</td>
        <td>
--        <a href="//downloads.camunda.cloud/release/camunda-bpm/tomcat/7.12/camunda-webapp-tomcat-standalone-7.12.0.war">
--          camunda-webapp-tomcat-standalone-7.12.0.war
-+        <a href="//downloads.camunda.cloud/release/camunda-bpm/tomcat/7.13/camunda-webapp-tomcat-standalone-7.13.0.war">
-+          camunda-webapp-tomcat-standalone-7.13.0.war
+-        <a href="//downloads.camunda.cloud/release/camunda-bpm/tomcat/7.13/camunda-webapp-tomcat-standalone-7.13.0.war">
+-          camunda-webapp-tomcat-standalone-7.13.0.war
++        <a href="//downloads.camunda.cloud/release/camunda-bpm/tomcat/7.14/camunda-webapp-tomcat-standalone-7.14.0.war">
++          camunda-webapp-tomcat-standalone-7.14.0.war
          </a>
        </td>
      </tr>
      <tr>
        <td>WildFly</td>
        <td>
--        <a href="//downloads.camunda.cloud/release/camunda-bpm/jboss/7.12/camunda-webapp-jboss-standalone-7.12.0.war">
--          camunda-webapp-jboss-standalone-7.12.0.war
-+        <a href="//downloads.camunda.cloud/release/camunda-bpm/jboss/7.13/camunda-webapp-jboss-standalone-7.13.0.war">
-+          camunda-webapp-jboss-standalone-7.13.0.war
+-        <a href="//downloads.camunda.cloud/release/camunda-bpm/jboss/7.13/camunda-webapp-jboss-standalone-7.13.0.war">
+-          camunda-webapp-jboss-standalone-7.13.0.war
++        <a href="//downloads.camunda.cloud/release/camunda-bpm/jboss/7.14/camunda-webapp-jboss-standalone-7.14.0.war">
++          camunda-webapp-jboss-standalone-7.14.0.war
          </a>
        </td>
      </tr>
@@ -353,7 +423,7 @@ On the new branch, adjust the configuration. Open the file `config.yaml` with an
 @@ -1,5 +1,5 @@
  ---
 -baseurl: "/manual/develop/"
-+baseurl: "/manual/7.13/"
++baseurl: "/manual/7.14/"
  languageCode: "en-us"
  title: "Camunda BPM documentation"
  theme: "camunda"
@@ -362,11 +432,12 @@ On the new branch, adjust the configuration. Open the file `config.yaml` with an
    section:
      id: "manual"
 -    version: "develop"
-+    version: "7.13"
--    versionAlias: "7.13"
++    version: "7.14"
+-    versionAlias: "7.14"
      versions:
        - "latest"
-+      - "7.13"
++      - "7.14"
+       - "7.13"
        - "7.12"
 	   - "7.11"
        - "7.10"
@@ -384,45 +455,24 @@ On the new branch, adjust the configuration. Open the file `config.yaml` with an
    github:
      repositoryName: "camunda/camunda-docs-manual"
 -    branch: "master"
-+    branch: "7.13"
++    branch: "7.14"
  ...
 ```
 
 Test the changes by running
 
 ```sh
-hugo server -w
+hugo server --baseUrl=http://localhost --port:1313
 ```
 
-and opening http://localhost:1313/manual/7.13/ in the browser.
+and opening http://localhost:1313/manual/7.14/ in the browser. Also check, that the new version is included in the version selection dropdown.
 
 Commit changes and push the branch:
 
 ```sh
-git commit -a -m "chore(release): create 7.13 branch"
-git push origin 7.13
+git commit -a -m "chore(release): create 7.14 branch"
+git push origin 7.14
 ```
-
-## Create docs stage and release jobs for new branch
-
-Ask INFRA to perform the following:
-
-Clone the camunda-ci/jenkins-job-dsl-seed-jobs repository and go into it.
-
-Now you need to create new jobs for staging and releasing the new docs branch.
-
-This is easily be done by adding the new maintenance version to the [Versions.groovy](https://github.com/camunda-ci/jenkins-job-dsl-seed-jobs/blob/master/src/main/groovy/version/Versions.groovy) file.
-
-Commit and push the changes
-
-```sh
-git commit -a -m "chore(release): create 7.13 docs jobs"
-git push origin master
-```
-
-After drinking 1 espresso, the new jobs should now appear on https://ci.cambpm.camunda.cloud/view/Docs/
-
-Trigger `camunda-docs-manual-stage (7.13, 7.13)` and check the result at http://stage.docs.camunda.org/manual/7.13/
 
 ## Adjust docs with new version
 
@@ -434,7 +484,7 @@ Checkout the latest branch of the camunda-docs-manual repository and set to new 
 
 ```sh
 git checkout latest
-git reset 7.13 --hard
+git reset 7.14 --hard
 ```
 
 Next, adjust the configuration for the latest version
@@ -444,7 +494,7 @@ Next, adjust the configuration for the latest version
 +++ b/config.yaml
 @@ -1,5 +1,5 @@
  ---
--baseurl: "/manual/7.13/"
+-baseurl: "/manual/7.14/"
 +baseurl: "/manual/latest/"
  languageCode: "en-us"
  title: "Camunda BPM documentation"
@@ -453,18 +503,18 @@ Next, adjust the configuration for the latest version
        url: "/enterprise"
    section:
      id: "manual"
--    version: "7.13"
+-    version: "7.14"
 +    version: "latest"
-+    versionAlias: "7.13"
++    versionAlias: "7.14"
      versions:
        - "latest"
-       - "7.13"
+       - "7.14"
 ```
 
 Commit and force-push
 
 ```sh
-git commit -a -m "chore(release): release 7.13 as latest"
+git commit -a -m "chore(release): release 7.14 as latest"
 git push origin latest --force
 ```
 
@@ -483,12 +533,12 @@ For hugo based branches (master, 7.4+) this means:
      version: "7.4"
      versions:
        - "latest"
-+      - "7.13"
-       - "7.12"
++      - "7.14"
+       - "7.13"
 ```
 
 ```sh
-git commit -a -m "chore(release): add 7.13"
+git commit -a -m "chore(release): add 7.14"
 git push origin 7.4
 ```
 
@@ -501,23 +551,23 @@ On master, we also bump the version alias to the next minor version:
    section:
      id: "manual"
      version: "develop"
--    versionAlias: "7.13"
-+    versionAlias: "7.14"
+-    versionAlias: "7.14"
++    versionAlias: "7.15"
      versions:
        - "latest"
-+      - "7.13"
-       - "7.12"
++      - "7.14"
+       - "7.13"
 ```
 
 ```sh
-git commit -a -m "chore(release): add 7.13, bump to 7.14 "
+git commit -a -m "chore(release): add 7.14, bump to 7.15 "
 git push origin master
 ```
 
 ### Adjust Redirects / URL rewrites
 
 Next we need to adjust the URL rewrites. First for stage. Go into the repository `camunda-docs-static`.
-Perform the following changes to release 7.13 (essentially bump `develop` to `7.14-SNAPSHOT`) :
+Perform the following changes to release 7.14 (essentially bump `develop` to `7.15-SNAPSHOT`) :
 
 ```diff
 --- a/config/stage/.htaccess
@@ -526,9 +576,9 @@ Perform the following changes to release 7.13 (essentially bump `develop` to `7.
  RewriteRule ^latest/api-references/java/ /manual/7.3/reference/javadoc/
 
  # Javadoc
--RewriteRule ^manual/develop/reference/javadoc/$ /javadoc/camunda-bpm-platform/7.13-SNAPSHOT [R=307,L]
-+RewriteRule ^manual/develop/reference/javadoc/$ /javadoc/camunda-bpm-platform/7.14-SNAPSHOT [R=307,L]
- RewriteRule ^manual/latest/reference/javadoc/$ /javadoc/camunda-bpm-platform/7.13 [R=307,L]
+-RewriteRule ^manual/develop/reference/javadoc/$ /javadoc/camunda-bpm-platform/7.14-SNAPSHOT [R=307,L]
++RewriteRule ^manual/develop/reference/javadoc/$ /javadoc/camunda-bpm-platform/7.15-SNAPSHOT [R=307,L]
+ RewriteRule ^manual/latest/reference/javadoc/$ /javadoc/camunda-bpm-platform/7.14 [R=307,L]
  RewriteRule ^manual/([^/]+)/reference/javadoc/$ /javadoc/camunda-bpm-platform/$1 [R=307,L]
 ```
 
@@ -542,10 +592,10 @@ git push origin master
 This is all that needs to be done for stage. For live we need to set the new version as the default "stable version". However, we should not commit and push this directly to master since it will become visible right away. Instead we prepare a pull request:
 
 ```sh
-git checkout -b 7.13
+git checkout -b 7.14
 ```
 
-Perform the following edits to release 7.13 (essentially you need to replace all the occurrences of the string `7.12` with `7.13` and bump `develop` to `7.14`) :
+Perform the following edits to release 7.14 (essentially you need to replace all the occurrences of the string `7.13` with `7.14` and bump `develop` to `7.15`) :
 
 ```diff
 --- a/config/live/.htaccess
@@ -555,84 +605,84 @@ Perform the following edits to release 7.13 (essentially you need to replace all
 
 
  # Javadoc
--RewriteRule ^manual/develop/reference/javadoc/$ /javadoc/camunda-bpm-platform/7.13-SNAPSHOT [R=307,L]
-+RewriteRule ^manual/develop/reference/javadoc/$ /javadoc/camunda-bpm-platform/7.14-SNAPSHOT [R=307,L]
- RewriteRule ^manual/latest/reference/javadoc/$ /javadoc/camunda-bpm-platform/7.13 [R=307,L]
+-RewriteRule ^manual/develop/reference/javadoc/$ /javadoc/camunda-bpm-platform/7.14-SNAPSHOT [R=307,L]
++RewriteRule ^manual/develop/reference/javadoc/$ /javadoc/camunda-bpm-platform/7.15-SNAPSHOT [R=307,L]
+ RewriteRule ^manual/latest/reference/javadoc/$ /javadoc/camunda-bpm-platform/7.14 [R=307,L]
  RewriteRule ^manual/([^/]+)/reference/javadoc/$ /javadoc/camunda-bpm-platform/$1 [R=307,L]
 
  # manual without version
--RewriteRule ^manual/?$ /manual/7.12/ [R=307,L]
-+RewriteRule ^manual/?$ /manual/7.13/ [R=307,L]
+-RewriteRule ^manual/?$ /manual/7.13/ [R=307,L]
++RewriteRule ^manual/?$ /manual/7.14/ [R=307,L]
 
--RewriteCond %{REQUEST_URI} ^/manual((?!7.12/)[^/]+)
-+RewriteCond %{REQUEST_URI} ^/manual((?!7.13/)[^/]+)
+-RewriteCond %{REQUEST_URI} ^/manual((?!7.13/)[^/]+)
++RewriteCond %{REQUEST_URI} ^/manual((?!7.14/)[^/]+)
  RewriteCond %{DOCUMENT_ROOT}/manual/%1 !-d
--RewriteRule ^manual/(.*) /manual/7.12/ [R=307,L]
-+RewriteRule ^manual/(.*) /manual/7.13/ [R=307,L]
+-RewriteRule ^manual/(.*) /manual/7.13/ [R=307,L]
++RewriteRule ^manual/(.*) /manual/7.14/ [R=307,L]
 
-- # Redirect /manual/X to /manual/7.12/X if folder X does not exist but 7.12/X does
--RewriteCond %{REQUEST_URI} ^/manual/((?!7.12/)[^/]+)
-+ # Redirect /manual/X to /manual/7.13/X if folder X does not exist but 7.13/X does
-+RewriteCond %{REQUEST_URI} ^/manual/((?!7.13/)[^/]+)
+- # Redirect /manual/X to /manual/7.13/X if folder X does not exist but 7.13/X does
+-RewriteCond %{REQUEST_URI} ^/manual/((?!7.13/)[^/]+)
++ # Redirect /manual/X to /manual/7.14/X if folder X does not exist but 7.14/X does
++RewriteCond %{REQUEST_URI} ^/manual/((?!7.14/)[^/]+)
  RewriteCond %{DOCUMENT_ROOT}/manual/%1 !-d
--RewriteCond %{DOCUMENT_ROOT}/manual/7.12/%1 -d
--RewriteRule ^manual/(.*) /manual/7.12/$1 [R=307,L]
-+RewriteCond %{DOCUMENT_ROOT}/manual/7.13/%1 -d
-+RewriteRule ^manual/(.*) /manual/7.13/$1 [R=307,L]
+-RewriteCond %{DOCUMENT_ROOT}/manual/7.13/%1 -d
+-RewriteRule ^manual/(.*) /manual/7.13/$1 [R=307,L]
++RewriteCond %{DOCUMENT_ROOT}/manual/7.14/%1 -d
++RewriteRule ^manual/(.*) /manual/7.14/$1 [R=307,L]
 
--# Redirect /manual/X/Y to /manual/7.12/Y if folder X does not exist but 7.12/Y does
--RewriteCond %{REQUEST_URI} ^/manual/((?!7.12/?)[^/]+)(/[^/]+)?
-+# Redirect /manual/X/Y to /manual/7.13/Y if folder X does not exist but 7.13/Y does
-+RewriteCond %{REQUEST_URI} ^/manual/((?!7.13/?)[^/]+)(/[^/]+)?
+-# Redirect /manual/X/Y to /manual/7.13/Y if folder X does not exist but 7.13/Y does
+-RewriteCond %{REQUEST_URI} ^/manual/((?!7.13/?)[^/]+)(/[^/]+)?
++# Redirect /manual/X/Y to /manual/7.14/Y if folder X does not exist but 7.14/Y does
++RewriteCond %{REQUEST_URI} ^/manual/((?!7.14/?)[^/]+)(/[^/]+)?
  RewriteCond %{DOCUMENT_ROOT}/manual/%1 !-d
--RewriteCond %{DOCUMENT_ROOT}/manual/7.12%2 -d
--RewriteRule ^manual/[^/]+(/[^/]+(?:/.*))? /manual/7.12$1 [R=307,L]
-+RewriteCond %{DOCUMENT_ROOT}/manual/7.13%2 -d
-+RewriteRule ^manual/[^/]+(/[^/]+(?:/.*))? /manual/7.13$1 [R=307,L]
+-RewriteCond %{DOCUMENT_ROOT}/manual/7.13%2 -d
+-RewriteRule ^manual/[^/]+(/[^/]+(?:/.*))? /manual/7.13$1 [R=307,L]
++RewriteCond %{DOCUMENT_ROOT}/manual/7.14%2 -d
++RewriteRule ^manual/[^/]+(/[^/]+(?:/.*))? /manual/7.14$1 [R=307,L]
 ```
 
 commit and push to branch:
 
 ```sh
-git commit -am "chore(release): set 7.13 as default version"
-git push origin 7.13
+git commit -am "chore(release): set 7.14 as default version"
+git push origin 7.14
 ```
 
 Merge this branch into master on the release day.
 
 #### Update the documentation smoke tests
 
-We also need to [adjust the smoke tests](https://github.com/camunda/camunda-docs-static/blob/master/test/HttpRedirectionTest.yml) for the URL rewrites that we adjusted before. As with the rewrite rules before, you basically need to replace all the occurrences of `7.12` with `7.13`.
+We also need to [adjust the smoke tests](https://github.com/camunda/camunda-docs-static/blob/master/test/HttpRedirectionTest.yml) for the URL rewrites that we adjusted before. As with the rewrite rules before, you basically need to replace all the occurrences of `7.13` with `7.14`.
 
 ```diff
 --- a/test/HttpRedirectionTest.yml
 +++ b/test/HttpRedirectionTest.yml
 https://docs.camunda.org:
   /:
--    target: /manual/7.12/
-+    target: /manual/7.13/
+-    target: /manual/7.13/
++    target: /manual/7.14/
     status: 307
   /manual/:
--    target: /manual/7.12/
-+    target: /manual/7.13/
+-    target: /manual/7.13/
++    target: /manual/7.14/
     status: 307
   /manual/reference/bpmn20:
--    target: /manual/7.12/
-+    target: /manual/7.13/
+-    target: /manual/7.13/
++    target: /manual/7.14/
     status: 307
 ```
 
 Commit the changes to the release branch and merge this branch into master on the release day:
 
 ```sh
-git commit -am "chore(release): update smoke tests to version 7.13"
-git push origin 7.13
+git commit -am "chore(release): update smoke tests to version 7.14"
+git push origin 7.14
 ```
 
 ## Stage Enterprise Download Page
 
-The new minor version needs to be added to the enterprise download page.
-Perform the following edits:
+The new minor version needs to be added to the enterprise download page. First, generate the link to the release notes via generate notes via [JIRA](https://jira.camunda.com/plugins/servlet/project-config/CAM/administer-versions?status=unreleased). Select the version and click on "Release Notes".
+Perform the following edits (adjust release notes link):
 
 ```diff
 --- a/enterprise/content/download.md
@@ -641,21 +691,21 @@ Perform the following edits:
      - war
 
    selected:
--    branch: "7.12"
--    version: "7.12.0"
-+    branch: "7.13"
-+    version: "7.13.0"
+-    branch: "7.13"
+-    version: "7.13.0"
++    branch: "7.14"
++    version: "7.14.0"
      server: "tomcat"
 
    branches:
-   - branch: "7.13"
+   - branch: "7.14"
      releases:
-+    - number: "7.13.0"
-+      note: "http://blog.camunda.org/post/2020/05/camunda-bpm-7130-released/"
++    - number: "7.14.0"
++      note: "https://jira.camunda.com/secure/ReleaseNote.jspa?projectId=10230&version=15532"
 +      date: "2019.11.29"
 +
--    - number: "7.13.0-alpha5"
--      note: "http://blog.camunda.org/post/2020/05/ReleaseCandidateAvailable/"
+-    - number: "7.14.0-alpha5"
+-      note: "https://jira.camunda.com/secure/ReleaseNote.jspa?projectId=10230&version=15532"
 -      date: "2019.05.01"
 ```
 
@@ -664,7 +714,7 @@ Note: You will need to remove all the alpha versions of the version you are rele
 Commit and push to master:
 
 ```sh
-git commit -a -m "chore(release): add 7.13.0 to download page"
+git commit -a -m "chore(release): add 7.14.0 to download page"
 git push origin master
 ```
 
@@ -681,11 +731,11 @@ Note: "showAlpha" must be set to false when releasing minor
 
 ## Release Jira
 
-Talk to EM or TL.
+Talk to EM or DE.
 
 ## Forward Security Reports
 
-Determine all security reports for which fixes have are released and forward them to 1) TL 2) EM. They will then take care of publishing security notices. Find all such issues with the following JIRA query:
+Determine all security reports for which fixes have are released and forward them to 1) EM 2) DE. They will then take care of publishing security notices. Find all such issues with the following JIRA query:
 
 ```
 project = CAM AND fixVersion = <released version> AND type = "Security Report"
@@ -702,35 +752,33 @@ We have several CI jobs which upload artifacts to Maven Central into their stagi
 
     *For Example:*
 
-    >org.camunda.bpm:camunda-bom:7.13.0
-    >org.camunda.bpm.webapp:camunda-webapp:7.13.0
-    >org.camunda.bpm.model:camunda-bpmn-model:7.13.0
-    >org.camunda.bpm.model:camunda-dmn-model:7.13.0
-    >org.camunda.bpm.model:camunda-cmmn-model:7.13.0
-    >org.camunda.bpm.model:camunda-xml-model:7.13.0
+    >org.camunda.bpm.webapp:camunda-webapp:7.14.0
+    >org.camunda.bpm:camunda-root:7.14.0
+    >org.camunda.bpm.assert.project:camunda-bpm-assert-root:7.14.0
+    >org.camunda.bpm:camunda-external-task-client-root:1.4.0
 
 5. Click on 'Release' at the menu on top of the list. A window will pop up were you can enter a description but it is not necessary. Activate 'Drop repository after release automatically'. Then proceed.
 6. Done.
 
 ## Release Javadocs
 
-1. The javadocs are staged automatically by the release build. Checkout if the javadocs are available at http://stage.docs.camunda.org/javadoc/camunda-bpm-platform/7.13 (you need to adapt the version in the link to the release version).
+1. The javadocs are staged automatically by the release build. Checkout if the javadocs are available at http://stage.docs.camunda.org/javadoc/camunda-bpm-platform/7.14 (you need to adapt the version in the link to the release version).
 2. Verify that the correct javadocs are present.
-3. Go to [Jenkins Camunda Docs Jobs](https://ci.cambpm.camunda.cloud/view/Docs/). After that, release the javadocs by triggering the the job `camunda-docs-release (javadoc-camunda-bpm-platform-7.13)` and `camunda-docs-release (javadoc-camunda-bpm-platform-7.14-SNAPSHOT)` (adapt versions).
+3. Go to [Jenkins Camunda Docs Jobs](https://ci.cambpm.camunda.cloud/view/Docs/). After that, release the javadocs by triggering the the job `camunda-docs-release (javadoc-camunda-bpm-platform-7.14)` and `camunda-docs-release (javadoc-camunda-bpm-platform-7.15-SNAPSHOT)` (adapt versions).
 
 
 ## Release the Staged Docs
 
 #### 1. Go to [Jenkins Camunda Docs Jobs](https://ci.cambpm.camunda.cloud/view/Docs/)
-#### 2. Start job `camunda-docs-release (manual-7.13)`
+#### 2. Start job `camunda-docs-release (manual-7.14)`
 #### 3. Start all other `camunda-docs-release (manual-7.X)` jobs
 #### 4. As part of an minor release, the current `master` content needs to be released as `latest` at the [docs repository](https://github.com/camunda/camunda-docs-manual).
 ##### 4.1 Tag the docs
 ```
 git checkout master
 git pull
-git tag -a 7.13.0 # the comment should be '7.13.0'
-git push origin 7.13.0
+git tag -a 7.14.0 # the comment should be '7.14.0'
+git push origin 7.14.0
 ```
 
 ##### 4.2 Release the tag as latest
@@ -739,7 +787,7 @@ Set the branch `latest` to the tag
 
 ```
 git checkout latest
-git reset --hard 7.13.0
+git reset --hard 7.14.0
 ```
 
 Edit the config file on the branch
@@ -760,7 +808,7 @@ Edit the config file on the branch
      id: "manual"
 -    version: "develop"
 +    version: "latest"
-     versionAlias: "7.13"
+     versionAlias: "7.14"
      versions:
        - "latest"
 ```
@@ -788,16 +836,16 @@ git push -f origin latest
 
 * Now the new content is available in http://docs.camunda.org/manual/latest/
 
-#### 5. Send an email to `camundabpm@camunda.com`
+#### 5. Send a message to `#cambpm-announcements`
 
 ```
 Hi all,
 
-I have now released the current version of the docs as 7.13 and latest. Master has been bumped to 7.14.
-If you are still documenting things that are relevant for 7.13, you need to
+I have now released the current version of the docs as 7.14 and latest. Master has been bumped to 7.15.
+If you are still documenting things that are relevant for 7.14, you need to
 
 - commit to master
-- cherry-pick to 7.13 branch
+- cherry-pick to 7.14 branch
 - cherry-pick to latest branch
 
 Thanks
@@ -805,17 +853,17 @@ Thanks
 
 ## Push Redirects / URL rewrites adjustments
 
-1. Go the [camunda-docs-static](https://github.com/camunda/camunda-docs-static) repository, check that the branch `7.13` is available and [these steps](#adjust-redirects--url-rewrites) were performed.
-2. Merge the `7.13` branch into master:
+1. Go the [camunda-docs-static](https://github.com/camunda/camunda-docs-static) repository, check that the branch `7.14` is available and [these steps](#adjust-redirects--url-rewrites) were performed.
+2. Merge the `7.14` branch into master:
 ```
 git checkout master
-git merge 7.13
+git merge 7.14
 git push origin master
 ```
 
 ## Adjust Google Custom Search Engine
 
-Talk to PM (Daniel)
+Talk to PM (or Daniel)
 https://cse.google.com/cse/setup/basic?cx=007121298374582869478:yaec0vxmc7e
 
 ## Release the Getting Started
@@ -840,7 +888,7 @@ Sources are here: https://github.com/camunda/camunda.com-new/live
 
 #### 2. Push it on `live`
 ```
-git commit -am ":beer:(download) 7.13.0 released"
+git commit -am ":beer:(download) 7.14.0 released"
 git push origin live
 ```
 
@@ -850,56 +898,47 @@ git push origin live
 
 ## Release the Blog Post
 
-1. Before you publish it ensure that the `camunda.com` [download page](https://camunda.com/download/) is up to date. Note: The title of the blogpost must be in the following format: Camunda 7.13.0 released.
+1. Before you publish it ensure that the `camunda.com` [download page](https://camunda.com/download/) is up to date. Note: The title of the blog post must be in the following format: Camunda 7.14.0 released.
 2. Publish the blog post by merging the branch with the master:
 
 ```
 git checkout master
-git merge 7.13.0
+git merge 7.14.0
 ```
 
-## Publish the release on Twitter
+## Publish the release
 
-Let MKT know that a new release is available by sending her the following email (Please **CC Daniel, Roman**):
+Let MKT, SUP and Niall (DEVREL) know that a new release is available by sending them the following email (Please **CC Daniel, Roman**):
 
 ```
-Hi Marketing team,
+Hi everyone,
 
 we have published a new minor release:
 
-* The version is 7.13.0.
-* The link to the blogpost is https://blog.camunda.org/post/2020/05/camunda-bpm-7130-released
-* The most noteworthy thing about this release is "COOLEST_FEATURE_IN_713"
-* We propose to include the following image (XX Link) in the tweet.
+* The version is 7.14.0.
+* The link to the blog post is https://blog.camunda.org/post/<year>/<month>/camunda-bpm-7140-released
+* The blog post is scheduled to go live on "BLOG_POST_RELEASE_DATE"
+* The most noteworthy thing about this release is "COOLEST_FEATURE_IN_714"
+* We propose to include the following image (XX Link) in the social media posts.
+
+@marketing, Please share this on social media.
+@Niall, Please create a post in the forum.
+@Team-Support, Please inform our enterprise customers.
 
 Best,
 XX
 ```
-(Also See: https://app.camunda.com/confluence/display/MAR/Internal+Social+Media+Posting+Process)
+(Also See: https://confluence.camunda.com/display/MAR/Social+Media)
 
-If you get an out of office reply, tweet yourself by logging into the Camunda BPM Twitter account.
-
-## Send mailings
-
-Send an email to SUP to send the mailings.
-
-## Forum Announcement
-
-Announce the release in https://forum.camunda.org by posting in the Announcements category linking to the blogpost (adapt elements in bold):
-
-> Title: Camunda BPM **7.13.0** released
-> Category: Announcements
-> Text:
-> Hi all,
->
-> Camunda BPM **7.13.0** has been released today.
-> Read all about it on our blog: **https://blog.camunda.org/post/2020/05/camunda-bpm-7130-released/**.
+## Send Release Notice
+Once the blog post is online, send out an e-mail to alle@camunda.com similar to the [alpha release notice](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/releases/Performing-an-Alpha-Release.md#send-release-notice).
+Include links to the blog post, the release presentation Zoom room or recording of the presentation, the release notes and download link (https://docs.camunda.org/enterprise/download/).
 
 ## Improve this Guide
 
 If you noticed any errors in the guides, any steps that were left out, please edit this document and keep it up to date.
 
-Note: For the version numbers used here it is ok to leave older versions in.
+Note: The version numbers in this guide should not be adjusted as it is easy to miss a place and create an inconsistent guide.
 
 -----
 
@@ -908,8 +947,6 @@ Note: For the version numbers used here it is ok to leave older versions in.
 * time: when the artifacts are built
 
 ## Camunda BPM Platform code changes
-
-* time: when the [jobs](#ci-tasks) below are ready
 
 ### Update "old version" in maven
 
@@ -967,11 +1004,6 @@ In the [sql-scripts][sql-scripts] folder of the [camunda/camunda-bpm-platform][c
 ### Example commit for above code changes
 
 See this [commit](https://github.com/camunda/camunda-bpm-platform/commit/df0df1688e7582eb89ade6a1fc004505501822b8) for [camunda-bpm-platform][camunda-bpm-platform].
-
-## CI tasks
-
-Create an issue for INFRA to provide support for the new minor version. Following [steps](https://github.com/camunda-ci/jenkins-job-dsl-seed-jobs/blob/master/docs/NewCamBPMVersion.md) have to be completed.
-  * A new (7.X) branch needs to be created on the maintenance repo through the https://release.cambpm.camunda.cloud/job/maintenance/job/RELEASE-create-camunda-bpm-maintenance-branch/ job
 
 ## Pick Alpha Release Manager
 

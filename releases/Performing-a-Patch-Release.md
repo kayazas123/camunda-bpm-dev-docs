@@ -30,6 +30,8 @@ The release procedure has 2 phases:
 
 ## Close the Branch
 
+Send an message to #cambpm-announcements in Slack with /cc to @cambpm-dri:
+
 ```
 Hi Team,
 
@@ -130,7 +132,7 @@ If you don't know wich fixes are worth the effort use the following rule of thum
 
 ## Unblock the Branch
 
-If everything is satisfying with the release, send an email to camundabpm@camunda.com:
+If everything is satisfying with the release, send an message to #cambpm-announcements in Slack:
 
 ```
 Hi Team,
