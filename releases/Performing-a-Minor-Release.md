@@ -236,6 +236,11 @@ git push origin 7.13.0
 ## Update german Webapp translations
 Ask a native-german colleague to update the [german translations](https://github.com/camunda/camunda-webapp-translations).
 
+## Update Screenshots
+
+Generate up-to-date screenshots according to the [HowTo](../howtos/update-screenshots.md).
+
+
 ## Release all secondary Camunda projects
 
 1. Check the [bom](https://github.com/camunda/camunda-bpm-platform/blob/master/bom/pom.xml#L34-L43), if there are secondary projects with an alpha/snapshot version.
