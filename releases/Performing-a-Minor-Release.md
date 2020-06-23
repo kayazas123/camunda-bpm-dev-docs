@@ -4,7 +4,7 @@ Steps marked with (*) are be performed by the "Release Manager" or a member of t
 
 PM = Product Manager (Andre Bappert)
 
-EM = Engineering Manager (Roman Smirnov)
+EM = Engineering Manager (Thorben Lindhauer)
 
 TL = Tech Lead (Thorben Lindhauer)
 
