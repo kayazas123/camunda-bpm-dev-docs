@@ -38,7 +38,8 @@ The release procedure itself has 4 phases:
 These tasks can be done within the two weeks before the release:
 
 *  [Request the new license book from Ulrike](#request-the-new-license-book) (EM)
-*  [Prepare testing plan](#prepare-test-plan) (* + QA)
+*  [Sync with Infra](#sync-with-infra) (*)
+*  [Prepare test plan](#prepare-test-plan) (* + QA)
 *  [Build a Release Candidate](#build-a-release-candidate) (*)
 *  [Test standalone webapps](#test-standalone-webapps) (*)
 *  [Adjust and migrate Getting Started guides](#adjust-and-migrate-getting-started-guides) (*)
@@ -105,6 +106,19 @@ At latest two weeks before the release, create a CAM ticket to update the licens
 1. Verify that the generated license book is now complete
 1. Update the license book in the sources at https://github.com/camunda/camunda-bpm-platform/tree/master/distro/license-book
 1. Update the Nexus link to the license book in the [docs](https://docs.camunda.org/manual/develop/introduction/licenses/#third-party-libraries)
+
+## Sync with Infra
+
+Inform INFRA (@cambpm-dri) about the release and the steps of the release guide that might involve INFRA. The intention of this is to sync the release manager and the @cambpm-dri and clarify open questions upfront.
+
+Things that might be of interest to the @cambpm-dri:
+* [Missing test environments](#prepare-test-plan)
+* [planned date for building release candidate](#build-a-release-candidate)
+* [planned release date for secondary projects](#release-all-secondary-camunda-projects)
+* [planned release date for side projects](#schedule-the-releases-of-side-projects)
+* [planned date for building the release](#trigger-the-release-build)
+* [new branch creation through PR](#create-new-branches)
+* [planned release date](#phase-3)
 
 ## Prepare test plan
 
