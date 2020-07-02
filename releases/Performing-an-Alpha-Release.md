@@ -176,6 +176,7 @@ For each container (including Spring Boot & Run) one developer should perform a 
 * Make sure the Docker QA images are ready to use
   1. Check if the Jenkins Job was executed successfully (if not retrigger it)
      * You can find the job here: `https://ci.cambpm.camunda.cloud/view/all/job/<minor-version>/job/<minor-version>-platform-docker-qa/`
+       * **Heads-up:** The Docker QA job in the release pipeline only triggers the actual job and does not indicate the fail/success of the actual job
      * If the job continues to fail, you could try to build & push the images locally from your machine. Please see the documentation about [Manually Build & Push the Docker QA Images](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/howtos/manually-build-docker-qa-images.md)
   2. Promote the versions of the Docker images in the [Portainer Templates Repository](https://github.com/camunda-ci/portainer-templates).
      * You can find an example commit here: https://github.com/camunda-ci/portainer-templates/commit/d94033
