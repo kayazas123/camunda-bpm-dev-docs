@@ -371,8 +371,8 @@ Check that new branches were created in the following repositories:
 
 Perform these steps:
 
-* Check out [the repository](https://github.com/camunda-ci/jenkins-job-dsl-seed-jobs)
-* Execute the [add-new-minor-version.sh](https://github.com/camunda-ci/jenkins-job-dsl-seed-jobs/blob/master/add-new-minor-version.sh) script
+* Check out [the repository](https://github.com/camunda/jenkins-job-dsl-seed-jobs)
+* Execute the [add-new-minor-version.sh](https://github.com/camunda/jenkins-job-dsl-seed-jobs/blob/master/add-new-minor-version.sh) script
 * Open a PR in the GitHub repository with the changes made by the script and assign `@cambpm-dri` as reviewer
 * Merge the branch after the review is done
 * After drinking 1 espresso, the new jobs should now appear on https://ci.cambpm.camunda.cloud/view/Docs/
