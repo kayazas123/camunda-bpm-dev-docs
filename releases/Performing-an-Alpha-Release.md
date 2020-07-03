@@ -187,6 +187,17 @@ For each container (including Spring Boot & Run) one developer should perform a 
 make sure to prepare the server/database combinations to be tested before next step (Conduct Testing). Assign combinations of application servers and databases to devs. Make sure the major servers and database are tested once. It is not necessary to test multiple combinations of those.
 For an alpha, the coverage of JDKs, browsers and operating systems is not so important, so this choice can be left to the devs conducting the test.
 
+**Only do this for the first alpha of a minor release (ie. the first alpha after a minor release)**
+
+There won't be any Docker stack files for the new minor version in the Portainer Templates when the first alpha is build.
+
+In order to make the new WAS & WLS Docker QA images available on Portainer, perform the following steps:
+
+1. Add the new Docker stack files for WAS & WLS. You can use [this commit](https://github.com/camunda-ci/portainer-templates/commit/b0cd9b048e25820b0e4215b7522bb8fa3f563151) as an example.
+2. Include the new stacks in the lists of stack templates, like in [this commit](https://github.com/camunda-ci/portainer-templates/commit/7efd7a5f1e5b454c8a33dd7f8ecbb4e30a8eab66).
+
+_Note: The changes can be made in a single commit._
+
 ## Conduct Testing
 
 1. Send a message in Slack (#cambpm-internal) asking the team to participate in manual testing:
