@@ -7,6 +7,7 @@ Steps:
 - [ ] [Define release version](#define-release-version) (*)
 - [ ] [Make calendar appointments](#make-calendar-appointments) (*)
 - [ ] [Prepare the blogpost](#prepare-the-blogpost) (*)
+- [ ] [Submit the blogpost to marketing](#submit-the-blogpost-to-marketing) (CM,CR)
 - [ ] [Check Preconditions](#check-preconditions) (*)
 - [ ] [Trigger the release build](#trigger-the-release-build) (*)
 - [ ] [Update the Enterprise Download Page](#update-the-enterprise-download-page) (MS,*)
@@ -16,9 +17,7 @@ Steps:
 - [ ] [Release Javadocs](#release-javadocs) (*)
 - [ ] [Release Jira](#release-jira) (*)
 - [ ] [Forward Security Reports](#forward-security-reports) (*)
-- [ ] [Update the Community Download Page](#update-the-community-download-page) (*)
 - [ ] [Check Docker Images](#check-docker-images) (*)
-- [ ] [Release the blogpost](#release-the-blogpost) (TL, *)
 - [ ] [Publish the Enterprise Page](#publish-the-enterprise-page) (*)
 - [ ] [Send Release Notice](#send-release-notice) (*)
 - [ ] [Forum Announcement](#forum) (*)
@@ -27,37 +26,30 @@ Steps:
 - [ ] [Pick Next Release Manager](#pick-next-release-manager) (*)
 
 Steps marked with (*) are to be performed by the "Release Manager".
-MS = Michael Schöttes
-TL = Thorben Lindhauer
-RS = Roman Smirnov
-CM = Charley Mann
+MS = Michael Schöttes \
+TL = Thorben Lindhauer \
+RS = Roman Smirnov \
+CM = Charley Mann \
+CR = Christopher Rogers
 
 # Define release version 
-There are five alpha releases before every minor release named alpha1 to alpha5. Major, minor and patch version are the same as the next minor release. The format of the version is `<MAJOR>.<MINOR>.<PATCH>-<ALPHA>` (e.g. 7.9.0-alpha3, 7.12.0-alpha5, ...). More information can be found in the [release policy](https://docs.camunda.org/enterprise/release-policy/) in the docs.
+There are five alpha releases before every minor release named alpha1 to alpha5. Major, minor, and patch versions are the same as the next minor release. The format of the version is `<MAJOR>.<MINOR>.<PATCH>-<ALPHA>` (e.g. 7.9.0-alpha3, 7.12.0-alpha5, ...). More information can be found in the [release policy](https://docs.camunda.org/enterprise/release-policy/) in the docs.
 
 This guide contains links and filters using placeholders. Please replace the placeholder with the corresponding substitute.
 
 # Make calendar appointments
 
-## Deciding on the release date
-Decide upon the exact date for the release day. How to find the release day:
-* it is always a Friday, except if the Friday is a holiday, then it's the day before (Thursday) and so on.
-* take the last day of the month and find the Friday that is "closest" to that date. Closest means that you have to count the number of days from the last day of the month to the previous/next Friday.
-* Ask the optimize (slack: `@optimize-release-manager`), modeler (slack: `@modeling-release-manager`) and infrastructure (slack: `#infra`) teams if they want to participate in the release presentation. Share a google docs presentation with them in case they want to participate.
+**Heads-up:** The release presentation is organized company-wide by the `@product-release-presentation-dri`. The DRI will create the Zoom meeting & the calendar appointment. Read all details about the company-wide release presentation organization on [confluence](https://confluence.camunda.com/display/camBPM/Release+Presentation+Organization).
 
-
-## **Release presentation**
-The release presentation is done remotely via Zoom. Create a Zoom meeting for the presentation. Ask Backoffice for a pro account.
-> 🕔 set a reminder on that date for the release presentation (~3 pm). Include the Zoom link in the invitation. Audience: alle@camunda.com. Location: none
-
-> 🕔 book a room for the team where we can hold the presentation. Audience: camundabpm@camunda.com Location: Any room with enough space.
+## **Hold Release presentation**
+> 🕔 Make an appointment 15 minutes before the release presentation until its end. Audience: camundabpm@camunda.com
 
 ## **Blog post contribution**
-> 🕔  set a reminder in the evening of the day before the code freeze so everyone has their blogpost contribution committed.
+> 🕔  set a reminder in the evening of the day before the code freeze, so everyone has their blogpost contribution committed.
 > Audience: camundabpm@camunda.com
 
 ## **Code Freeze**
-> 🕔  in the evening of the day before the build will take place until its end. If the release presentation is on Friday, the code freeze can be scheduled for Wednesday evening.
+> 🕔  in the evening of the day before the build will take place until its end. If the release presentation is on Tuesday, the code freeze can be scheduled for Friday evening.
 > Audience: camundabpm@camunda.com
 
 ## **Build release**
@@ -69,42 +61,42 @@ The release presentation is done remotely via Zoom. Create a Zoom meeting for th
 
 # Prepare the Blogpost
 
-Goal: Prepare a blogpost skeleton on a remote branch, such that your colleagues can contribute their sections.
+Goal: Prepare a blogpost skeleton as a draft on WordPress, such that your colleagues can contribute their sections.
 
 
-#### 1. Update the 'master' and create a branch on the [blog repository](https://github.com/camunda/blog.camunda.org).
+## Create a draft on WordPress
 
-```
-git checkout master
-git pull origin master
-git checkout -b 7.9.0-alpha3
-```
+1. Open https://camunda.com/wp-admin/ & log in with your WordPress credentials (ask David Paradis if you don't have credentials yet)
+2. Click on "Posts" in the left sidebar
+3. Click on "Add New"
+4. Add "Camunda BPM Runtime 7.Y.0-alphaZ Released" as title
+5. Add the blog post skeleton
+6. In the right sidebar, open the dropdown "Status & visibility" and choose "Camunda BPM Team" as author
+7. Open the "Categories" dropdown and select the following checkboxes `Camunda BPM`, `Product News` & `Release Notes`
+8. Click on "Preview" to see a preview of the blog post
 
-#### 2. Create a markdown file and push it to the repo.
+## Encourage Content
 
-The filename must follow the format `camunda-bpm-<release-version-short>-released.md` and must be located in `/content/post/<year>/<month>/`. (e.g. `camunda-bpm-790-aplha3-released.md`, `camunda-bpm-7120-alpha5-released.md`)
-It should contain an introduction (feature overview, release notes, download encouragement) and conclusion (feedback encouragement, outlook). You can use the blogpost of the last alpha release as a blueprint.
+Ask your colleagues to contribute content for any noteworthy features they have implemented. They can log in with their WordPress credentials and edit the draft blog post.
 
-```
-git add /content/post/2017/07/camunda-bpm-790-alpha3-released.md
-git commit
-git push origin 7.9.0-alpha3
-```
+# Submit the blogpost to Marketing
 
-#### 3. Encourage Content
+Some days before the release, submit the blogpost to marketing so that they have the chance to proofread it:
 
-Ask your colleagues to contribute content for any noteworthy features they have implemented.
+1. Open the blog post in WordPress
+2. Click on the "Submit for Review" button in the upper right corner
+3. Send an email to `marketing@camunda.com` to communicate at which date the blog post should be published (they will also take care of publishing the release on our social media channels)
 
 # Check Preconditions
 
-- There are no Snapshot dependencies to secondary projects like Spin or Connect ([Release procedure](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/releases/Release-secondary-projects.md)). For that, check [bom](https://github.com/camunda/camunda-bpm-platform/blob/master/bom/pom.xml) for snapshot dependencies (All snapshot dependencies contain the word 'SNAPSHOT' in their name).
+- There are no Snapshot dependencies on secondary projects like Spin or Connect ([Release procedure](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/releases/Release-secondary-projects.md)). For that, check [Root pom.xml](https://github.com/camunda/camunda-bpm-platform/blob/master/pom.xml) for snapshot dependencies (All snapshot dependencies contain the word 'SNAPSHOT' in their name).
 - There are no code problems ([check ci](https://broken.cambpm.camunda.cloud/) section "Master" and "Release")
 - [Release Test Job](https://release.cambpm.camunda.cloud/view/Release-Test/) passed successfully recently
 - Post a message to `#cambpm-announcements` and `@cambpm-dri` (INFRA) on Slack:
 ```
 Hey,
 
-please stop pushing to master since we are going to build the alpha release.
+Please stop pushing to master since we are going to build the alpha release.
 ```
 
 # Trigger the Release Build
@@ -127,13 +119,13 @@ BRANCH:              master
 ```
 
 Click Build.
-Wait for the following jobs to turn green before continuing with the next step (check e.g. [here](https://release.cambpm.camunda.cloud/view/Release-Master/builds)):
+Wait for the following jobs to turn green before continuing with the next step (check, e.g. [here](https://release.cambpm.camunda.cloud/view/Release-Master/builds)):
 
 
 * 7.9-RELEASE-build-camunda-bpm-CE-tags
 * 7.9-RELEASE-build-camunda-bpm-EE-tags
 
-Please also check that there are no issues at the jenkins 'Release' build (see [here](https://broken.cambpm.camunda.cloud/)).
+Please also check that there are no issues at the Jenkins 'Release' build (see [here](https://broken.cambpm.camunda.cloud/)).
 
 # Update the Enterprise Download Page
 
@@ -150,7 +142,7 @@ All releases are handled as HUGO page variables in the document header. Add the 
       date: "<release-date>"
 ```
 
-Make sure that you have set the right minor version (e.g. 7.9) and release version (e.g. 7.9.0-alpha3).
+Make sure that you have set the correct minor version (e.g., 7.9) and release version (e.g., 7.9.0-alpha3).
 
 # Release the Enterprise Page
 
@@ -169,7 +161,7 @@ git push origin master
 
 # Test Release
 
-For each container (including Spring Boot & Run) one developer should perform a test. Download the release artifacts from http://stage.docs.camunda.org/enterprise/download/
+For each container (including Spring Boot & Run), one developer should perform a test. Download the release artifacts from http://stage.docs.camunda.org/enterprise/download/
 
 ## Preparations
 
@@ -185,14 +177,14 @@ For each container (including Spring Boot & Run) one developer should perform a 
      * The step requires a VPN connection. Find all the details here: https://confluence.camunda.com/display/ADMIN/VPN
      * The how-to for running the containers can be found [here](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/howtos/was-wls-autosetup.md)
 * Provide a test plan sheet as a copy from [the template](https://docs.google.com/spreadsheets/d/1K9xRFix6NFjnFJDVailOYPTkzJyQCA9yIrFcyFtC3KE/edit#gid=1656336280),
-make sure to prepare the server/database combinations to be tested before next step (Conduct Testing). Assign combinations of application servers and databases to devs. Make sure the major servers and database are tested once. It is not necessary to test multiple combinations of those.
-For an alpha, the coverage of JDKs, browsers and operating systems is not so important, so this choice can be left to the devs conducting the test.
+make sure to prepare the server/database combinations to be tested before the next step (Conduct Testing). Assign combinations of application servers and databases to devs. Make sure the major servers and databases are tested once. It is not necessary to test multiple combinations of those.
+For an alpha, the coverage of JDKs, browsers, and operating systems is not so important so that this choice can be left to the devs conducting the test.
 
-**Only do this for the first alpha of a minor release (ie. the first alpha after a minor release)**
+**Only do this for the first alpha of a minor release (i.e. the first alpha after a minor release)**
 
-There won't be any Docker stack files for the new minor version in the Portainer Templates when the first alpha is build.
+There won't be any Docker stack files for the new minor version in the Portainer Templates when the first alpha is built.
 
-In order to make the new WAS & WLS Docker QA images available on Portainer, perform the following steps:
+To make the new WAS & WLS Docker QA images available on Portainer, perform the following steps:
 
 1. Add the new Docker stack files for WAS & WLS. You can use [this commit](https://github.com/camunda-ci/portainer-templates/commit/b0cd9b048e25820b0e4215b7522bb8fa3f563151) as an example.
 2. Include the new stacks in the lists of stack templates, like in [this commit](https://github.com/camunda-ci/portainer-templates/commit/7efd7a5f1e5b454c8a33dd7f8ecbb4e30a8eab66).
@@ -205,16 +197,14 @@ _Note: The changes can be made in a single commit._
 ```
 Hey team,
 
-We are starting the release test for the current alpha. The server/database combination for testing are already defined in the test release sheet.
+Please join me in testing the Camunda BPM Runtime 7.14.0-alpha2 release:
 
-Once you are done with testing, please inform me of the result in this thread and I will assign the next environment if necessary.
-
-You can download the distros here: http://stage.docs.camunda.org/enterprise/download/
-Here is the test release spreadsheet: <link>
-Perform the standard regression test: [Standard Regression Test](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/releases/Performing-an-Alpha-Release.md#standard-regression-test)
-
+1. Test the server/database combination assigned to your name and document your JDK version, browser, OS and progress in the [Release Test Spreadsheet](<link>)
+2. You can download the distros on the [Enterprise Download Page](https://stage.docs.camunda.org/enterprise/download/)
+3. Perform the [Standard Regression Test](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/releases/Performing-an-Alpha-Release.md#standard-regression-test)
+4. If you have found a bug/regression, please create a ticket and link it in the Notes column in the [Release Test Spreadsheet](<link>)
 ```
-2. Keep track environments and test results in the test plan sheet.
+2. Keep track of environments and test results in the test plan sheet.
 
 ### Standard Regression Test
 1. Download the release artifact from the enterprise download page
@@ -226,7 +216,7 @@ Perform the standard regression test: [Standard Regression Test](https://github.
     2. Add a license key to the platform
 5. Open Tasklist
     1. Start a new invoice process
-    2. Walk through the invoice process step by step
+    2. Walkthrough the invoice process step by step
 6. Open Cockpit
     1. Use the dashboard search plugin to find all finished invoice instances (There should be at least one)
     2. Go to the runtime instance view of the invoice showcase
@@ -239,15 +229,15 @@ Perform the standard regression test: [Standard Regression Test](https://github.
     9. Add a variable to the process instance
 
 #### Testing with Spring Boot
-Use the spring-boot-example [example webapp ee](https://github.com/camunda/camunda-bpm-examples/tree/master/spring-boot-starter/example-webapp-ee) as test scenario.
+Use the spring-boot-example [example webapp ee](https://github.com/camunda/camunda-bpm-examples/tree/master/spring-boot-starter/example-webapp-ee) as a test scenario.
 
 Check out compatible versions for the release --> [Spring Boot Version Compatibility](https://docs.camunda.org/manual/develop/user-guide/spring-boot-integration/version-compatibility/).
 
 Change the pom.xml file:
 ```
 <properties>
-  <camunda.version><release-version>-ee</camunda.version>
-  <spring.boot.version>2.1.4.RELEASE</spring.boot.version>
+  <camunda.version>7.X.0-alphaY-ee</camunda.version>
+  <spring.boot.version>X.Y.Z.RELEASE</spring.boot.version> <!-- make sure to test the latest supported Spring Boot version -->
 </properties>
 ```
 
@@ -274,9 +264,9 @@ the Camunda-supported databases. By default, H2 will be used, while the rest can
 
 ### Release Specific Test
 
-According to the implemented feature topics choose some of the new feature to to test them manually.
-If you don't know wich fixes are worth the effort use the following rule of thumb:
-* Prefer UI features as the test coverage is usually lower compared to backend features. Use different browser for the test.
+According to the implemented feature topics, choose some of the new features to test them manually.
+If you don't know which fixes are worth the effort use the following rule of thumb:
+* Prefer UI features as the test coverage is usually lower compared to backend features. Use a different browser for the test.
 * Prefer features related to customer support issues as our customers expect that these features are working correctly.
 
 If you are satisfied with the release, post a message to `#cambpm-announcements` on Slack:
@@ -292,9 +282,9 @@ the release test passed, you can commit to master again :)
 
 > Precondition release tests are passed.
 
-We have several CI jobs which upload artifacts to Maven Central into their staging repository section. In order to make them publicly available, we need to manually close the staging repositories and release the artifacts.
+We have several CI jobs that upload artifacts to Maven Central into their staging repository section. To make them publicly available, we need to close the staging repositories and release the artifacts manually.
 
-1. Go to [Maven Central](https://oss.sonatype.org/) and login using the credentials found in our [Confluence](https://app.camunda.com/confluence/display/camBPM/Maven+Central+Release)
+1. Go to [Maven Central](https://oss.sonatype.org/) and log in using the credentials found in our [Confluence](https://app.camunda.com/confluence/display/camBPM/Maven+Central+Release)
 2. On the left side, click on the 'Staging Repositories' link.
 3. After it has been loaded, scroll down to the bottom of the list. You should find the relevant Camunda staging repositories there.
 4. Mark each repository you want to release.
@@ -304,7 +294,7 @@ We have several CI jobs which upload artifacts to Maven Central into their stagi
     >org.camunda.bpm:camunda-root:7.13.0-alpha5
 	  >org.camunda.bpm.webapp:camunda-webapp:7.13.0-alpha5
 
-5. Click on 'Release' at the menu on top of the list. A window will pop up were you can enter a description but it is not necessary. Activate 'Drop repository after release automatically'. Then proceed.
+5. Click on 'Release' at the menu on top of the list. A window will pop up where you can enter a description, but it is not necessary. Activate 'Drop repository after release automatically'. Then proceed.
 6. Done.
 
 Hint: It takes about two hours until the artifacts can be found on Maven Central.
@@ -379,7 +369,7 @@ git push --force-with-lease origin latest --tags
 
 #### 7. Update redirects
 
-**Only do this for alpha1 (ie. the first alpha after a minor release)**
+**Only do this for alpha1 (i.e., the first alpha after a minor release)**
 
 In `camunda-docs-static`, edit the redirects
 
@@ -432,10 +422,10 @@ Now the new javadocs are available here: ``https://docs.camunda.org/javadoc/camu
 
 Make sure that you have set the right minor version within all the links. (e.g. 7.9, 7.12)
 
-adjust the version in the URL, e.g. 7.9 or 7.12
+adjust the version in the URL, e.g., 7.9 or 7.12
 
 # Release JIRA
-The goal for releasing the JIRA is to add the version you would like to release to issues which have already been closed. To achieve this, please make sure that the alpha version you would like to release [already exists](https://app.camunda.com/jira/browse/CAM/?selectedTab=com.atlassian.jira.jira-projects-plugin:versions-panel). If not, ask Michael, Roman or Thorben to create this alpha version in JIRA.
+The goal for releasing the JIRA is to add the version you would like to release to issues that have already been closed. To achieve this, please make sure that the alpha version you would like to release [already exists](https://app.camunda.com/jira/browse/CAM/?selectedTab=com.atlassian.jira.jira-projects-plugin:versions-panel). If not, ask Michael, Roman or Thorben to create this alpha version in JIRA.
 
 To add the release version to the respective "fixVersion" field of all issues which have already been closed, go to the [issues page](https://app.camunda.com/jira/issues) and make sure that the advanced search is enabled.
 
@@ -461,11 +451,11 @@ Put the following query in the search box of the [issues page](https://app.camun
 project = CAM AND fixVersion = <release-version>
 ```
 Perform a sanity check of the released issues by making sure that the `Fix Version/s` only includes the 
-* current alpha version (e.g. 7.13.0-alpha2)
-* the current minor version (e.g. 7.13.0)
-* backport versions (optional, e.g. 7.12.3, 7.11.9)
+* current alpha version (e.g., 7.13.0-alpha2)
+* the current minor version (e.g., 7.13.0)
+* backport versions (optional, e.g., 7.12.3, 7.11.9)
 
-If you have any questions feel free to approach Thorben. If Thorben is not available, you can ask Michael and/or Roman.
+If you have any questions, feel free to approach Thorben. If Thorben is not available, you can ask Michael and/or Roman.
 
 # Forward Security Reports
 
@@ -474,28 +464,6 @@ Determine all security reports for which fixes have are released and forward the
 ```
 project = CAM AND fixVersion = <release-version> AND type = "Security Report"
 ```
-
-# Update the Community Download Page
-
-You need to provide the release notes for the current version. You can find them in Jira:
-
-https://app.camunda.com/jira/secure/BrowseProject.jspa/?selectedTab=com.atlassian.jira.jira-projects-plugin:versions-panel
-
-Select the current version and hit the 'release notes' tab and provide the coresponding link.
-
-You can try first to push your changes to [master](https://github.com/camunda/camunda.com-new/blob/master/data/releases.json) and check your change on [stage](https://app.camunda.com/jenkins/view/All/job/stage.camunda.com-new%20(master)/).
-
-Note: "showAlpha": true when releasing alpha
-
-Or you can push directly on live (keep in mind that everyone can see it after that). You need to update the following file:
-https://github.com/camunda/camunda.com-new/blob/live/data/releases.json
-(Similar to this [commit](https://github.com/camunda/camunda.com-new/blob/2517b2202b8ff9d5d33f5ef45c7ccc8e567a0ec8/data/releases.json#L18-L26))
-
-Your push will trigger automatically a Jenkins job here:
-https://app.camunda.com/jenkins/view/All/job/camunda.com-new%20(live)/
-If everything is ok with it, you check your change under downloads page.
-
-In case you don't have permissions for this repository please ask INFRA for help.
 
 # Check Docker Images
 
@@ -506,70 +474,26 @@ Verify that the docker images [CE](https://hub.docker.com/r/camunda/camunda-bpm-
 
 Make sure that you have set the right minor version within the link. (e.g. 7.9, 7.12)
 
-# Release the Blogpost
-
-
-#### 1. Update the release notes link
-
-Update the link to the release notes in the blogpost's introduction. To generate it (if not already done in a previous step), go to [this page](https://app.camunda.com/jira/secure/ReleaseNote.jspa), select the version you would like to release, set the format to "html" and click on "Create". Ask Thorben if you do not have permissions to perform this step.
-
-#### 2. Ensure that everyone has contributed their content.
-
-#### 3. Proofread the paragraphs and check for potential enterprise features.
-
-All enterprise features need to have a disclaimer like
-```
-> Please bear in mind that this feature is only available in the Enterprise Edition of the Camunda BPM platform. To try it out anyway, please request a [Free Trial or Quote](https://camunda.com/enterprise/)
-```
-
-#### 4. Squash all the commits to one single commit
-
-```
-git rebase -i master
-```
-
-Replace all 'pick' words with 's' except the first one, e.g.:
-
-```
-pick fda59df commit 1
-s x536897 commit 2
-s c01a668 commit 3
-```
-
-#### 5. Before you publish it ensure that the camunda.com download page is up to date.
-
-Note: The title of the blogpost must be in the following format: `Camunda BPM <release-version> Released` (e.g. `Camunda BPM 7.9.0-alpha3 Released`)
-
-#### 6. Publish the blog post by merging the branch with the master:
-
-```
-git checkout master
-git merge 7.9.0-alpha3
-```
-
-#### 7. Check if everything worked out just fine at the [blog page](https://blog.camunda.org/).
-
 # Publish the Enterprise Page
 
-Check for unpublished commits (of other teams, e.g. Optimize) in [docs-static](https://github.com/camunda/camunda-docs-static/tree/master/enterprise), if there are some, sync with them if it is ok to publish the page.
+Check for unpublished commits (of other teams, e.g., Optimize) in [docs-static](https://github.com/camunda/camunda-docs-static/tree/master/enterprise), if there are some, sync with them if it is ok to publish the page.
 Release the Enterprise documentation by triggering the following build:
 https://ci.cambpm.camunda.cloud/view/Docs/job/docs/job/camunda-docs-release%20(enterprise)/
 
 # Send Release Notice
 
-Let everyone know that a new release is available by sending the following email to alle@camunda.com with CC to marketing@camunda.com and team-support@camunda.com:
+Let everyone know that a new release is available by sending the following email to `alle@camunda.com` with CC to `team-support@camunda.com`:
 
 ```
 Hi everyone,
  
-we have released Camunda BPM <release-version> today. Find all the details below: 
+We have released Camunda BPM Runtime <release-version> Today. Find all the details below: 
 
 Blog Post: <link-to-blog-post>
 Release Presentation: <presentation-date, e.g. Feb 28, 2020 02:00 PM (Berlin time)>, Join the presentation on Zoom: <link-to-zoom-call>
 Release Notes: <link-to-release-notes> 
 Download: https://docs.camunda.org/enterprise/download/
 
-@marketing Please share this release on social media
 @Team-Support Please include this release in the next customer notification
 
 Best,
@@ -581,16 +505,12 @@ Concerning the Support Team:
 You will receive a test email that needs to be approved.
 ⚠️ If you receive an Out of Office notification, you can ask Michael from QA to send the email.
 
-Concerning the Marketing Team:
-
-⚠️ If you receive no answer or an Out of Office notification, you can directly approach Gottfried from Marketing.
-
 # Forum
 
 Announce the release in https://forum.camunda.org by posting in the Announcements category linking to the blogpost (adapt elements in bold):
 
 ```
-Title: Camunda BPM <release-version> released
+Title: Camunda BPM Runtime <release-version> released
 
 Category: Announcements
 
@@ -598,23 +518,22 @@ Text:
 
 Hi all,
 
-Camunda BPM <release-version> has been released today.
+Camunda BPM Runtime <release-version> has been released today.
 Read all about it on our blog: <link-to-blog-post>.
 ```
 
 # Improve this Guide
 
-If you noticed any errors in the guides, any steps that were left out, please edit this document and keep it up to date. For changes to the release procedure create a ticket in the [CAMTEAM](https://app.camunda.com/jira/browse/CAMTEAM) project and follow the PR base workflow.
+If you noticed any errors in the guides, any steps that were left out, please edit this document and keep it up to date. For changes to the release procedure, create a ticket in the [CAMTEAM](https://app.camunda.com/jira/browse/CAMTEAM) project, and follow the PR base workflow.
 
-Note: For the version numbers used here it is ok to leave older versions in.
+Note: For the version numbers used here, it is ok to leave in older versions.
 
 # Present and Celebrate the Release
 
-In the afternoon, present the release remotely via Zoom. If you like you can moderate the presentation. If you prefer someone else do it (which is perfectly fine), please ask Thorben. All presenters should be present and be able to actively participate in a Zoom conference.
+Present the release remotely via Zoom. If you like, you can moderate the presentation. If you prefer someone else do it (which is perfectly fine), please ask Thorben. All presenters should be present and be able to participate in a Zoom conference actively.
 
 ## Requirements
 
-* post the blog post till then
 * talk **before** with the people who should present the new features
 * ask those people to set up demos on their machines that they can share on screen
 
