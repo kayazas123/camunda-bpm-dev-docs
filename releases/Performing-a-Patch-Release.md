@@ -28,6 +28,8 @@ The release procedure has 2 phases:
 - There are no code problems ([check ci](https://ci.cambpm.camunda.cloud/view/all/job/7.7/view/Broken/) - replace the version in path with the appropriate one)
 - There are no code tickets in review or test
 
+If you encounter any problem, please contact the @cambpm-release-manager 
+
 ## Close the Branch
 
 Send an message to #cambpm-announcements in Slack with /cc to @cambpm-dri:
@@ -64,6 +66,8 @@ Wait for the following jobs to turn green before continuing with the next step:
 
 Track the progress of release builds here.
 https://release.cambpm.camunda.cloud/view/Release-7.11/
+
+If you encounter any problem, please contact the @cambpm-dri
 
 ## Update the Enterprise Download Page
 
