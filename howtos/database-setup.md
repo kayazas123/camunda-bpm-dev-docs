@@ -344,24 +344,23 @@ copy the jdbc driver to ```%SERVER_HOME/lib```
 
 Location: ```%SERVER_HOME\conf\server.xml```
 
-```
-<Resource name="jdbc/ProcessEngine"
+```<Resource name="jdbc/ProcessEngine"
               auth="Container"
               type="javax.sql.DataSource" 
               factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
               uniqueResourceName="process-engine"
               driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" 
-              url="jdbc:sqlserver://127.0.0.1:1433;DatabaseName=process-engine"
-              username="micha"  
-              password="cam123"  
+              url="jdbc:sqlserver://portainer.camunda.loc:30352;DatabaseName=master"
+              username="SA"  
+              password="camunda_123"  
               maxPoolSize="20"  
               minPoolSize="5" />
 ```
 
 
 ## jdbc driver  
-download Microsoft JDBC Driver 4.0 for SQL Server and copy sqljdbc4.jar to ```%SERVER_HOME\lib```
-
+download Microsoft JDBC Driver for SQL Server and copy mssql-jdbc-8.2.2.jre8.jar to ```%SERVER_HOME\lib```
+https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver15
 
 # Tomcat and Postgres
 
