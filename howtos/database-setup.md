@@ -1,9 +1,21 @@
 # Database Setup
 These site collects information's about how to combine application server with databases.
 
+
+* [JBoss and Postgresql](#jboss-and-postgresql)
+* [JBoss and MYSQL](#jboss-and-mysql)
+* [Wildfly and Postgresql](#wildfly-and-postgresql)
+* [Wildfly and Oracle](#wildfly-and-oracle)
+* [Wildfly and MariaDB](#wildfly-and-mariadb)
+* [Tomcat and Postgresql](#tomcat-and-postgresql)
+* [Tomcat and MSSQL](#tomcat-and-mssql)
+
+
 # JBoss and Postgresql
 
-## platform.xml
+## standalone.xml
+
+Location: ```%SERVER_HOME/standalone/configuration/standalone.xml```  
 ```
 <datasources>
     <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
@@ -34,10 +46,10 @@ These site collects information's about how to combine application server with d
 ```
 
 ## jdbc driver
-copy the driver jar to ```%SERVER_HOME\modules\org\postgresql\main```
+copy the driver jar to ```%SERVER_HOME/modules/org/postgresql/main```
 
 ## module.xml
-create the file module.xml in ```%SERVER_HOME\modules\org\postgresql\main``` with the following content. Check if resource root path matches the version of the downloaded driver jar.
+create the file module.xml in ```%SERVER_HOME/modules/org/postgresql/main``` with the following content. Check if resource root path matches the version of the downloaded driver jar.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -58,6 +70,11 @@ create the file module.xml in ```%SERVER_HOME\modules\org\postgresql\main``` wit
 ```
 
 # JBoss and MYSQL
+
+## standalone.xml
+
+Location: ```%SERVER_HOME/standalone/configuration/standalone.xml```  
+
 ```
 <datasources>
     <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
@@ -97,10 +114,10 @@ create the file module.xml in ```%SERVER_HOME\modules\org\postgresql\main``` wit
 ```
 
 ## jdbc driver
-copy the driver jar to ```%SERVER_HOME\modules\com\mysql\main```
+copy the driver jar to ```%SERVER_HOME/modules/com/mysql/main```
 
 ## module.xml
-create the file module.xml in ```%SERVER_HOME\modules\com\mysql\main``` with the following content. Check if resource root path matches the version of the downloaded driver jar.
+create the file module.xml in ```%SERVER_HOME/modules/com/mysql/main``` with the following content. Check if resource root path matches the version of the downloaded driver jar.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -120,9 +137,12 @@ create the file module.xml in ```%SERVER_HOME\modules\com\mysql\main``` with the
 
 ```
 
-# Wildfly and Postgres
+# Wildfly and Postgresql
 
-## platform.xml
+## standalone.xml
+
+Location: ```%SERVER_HOME/standalone/configuration/standalone.xml```  
+
 ```
 <datasources>
     <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
@@ -155,10 +175,10 @@ create the file module.xml in ```%SERVER_HOME\modules\com\mysql\main``` with the
 
 ## jdbc driver
 download a proper jdbc drive
-copy the driver jar to ```%SERVER_HOME\modules\org\postgresql\main```
+copy the driver jar to ```%SERVER_HOME/modules/org/postgresql/main```
 
 ## module.xml
-create the file module.xml in ```%SERVER_HOME\modules\org\postgresql\main``` with the following content. Check if resource root path matches the version of the downloaded driver jar.
+create the file module.xml in ```%SERVER_HOME/modules/org/postgresql/main``` with the following content. Check if resource root path matches the version of the downloaded driver jar.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -181,7 +201,10 @@ create the file module.xml in ```%SERVER_HOME\modules\org\postgresql\main``` wit
 
 # Wildfly and Oracle
 
-## platform.xml
+## standalone.xml
+
+Location: ```%SERVER_HOME/standalone/configuration/standalone.xml```  
+
 ```
 <datasources>
     <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
@@ -213,10 +236,10 @@ create the file module.xml in ```%SERVER_HOME\modules\org\postgresql\main``` wit
 
 
 ## jdbc driver
-copy the driver jar to ```%SERVER_HOME\modules\com\oracle\main```
+copy the driver jar to ```%SERVER_HOME/modules/com/oracle/main```
 
 ## module.xml
-create the file module.xml in ```%SERVER_HOME\modules\com\oracle\main``` with the following content. Check if resource root path matches the version of the downloaded driver jar.
+create the file module.xml in ```%SERVER_HOME/modules/com/oracle/main``` with the following content. Check if resource root path matches the version of the downloaded driver jar.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -235,7 +258,7 @@ create the file module.xml in ```%SERVER_HOME\modules\com\oracle\main``` with th
 ```
 
 
-# WildFly with MariaDB
+# WildFly and MariaDB
 
 Create new module folder structure and add a module.xml
 ```
@@ -310,11 +333,11 @@ docker pull registry.camunda.com/camunda-ci-mariadb
 docker run -d -p 3306:3306 registry.camunda.com/camunda-ci-mariadb
 ```  
 
-# Tomcat and Postgres
+# Tomcat and Postgresql
 
 ## server.xml  
 
-Location: ```%SERVER_HOME\conf\server.xml```
+Location: ```%SERVER_HOME/conf/server.xml```
 
 ```
 <Resource name="jdbc/ProcessEngine"
@@ -342,7 +365,7 @@ copy the jdbc driver to ```%SERVER_HOME/lib```
 
 ## server.xml  
 
-Location: ```%SERVER_HOME\conf\server.xml```
+Location: ```%SERVER_HOME/conf/server.xml```
 
 ```<Resource name="jdbc/ProcessEngine"
               auth="Container"
@@ -359,14 +382,14 @@ Location: ```%SERVER_HOME\conf\server.xml```
 
 
 ## jdbc driver  
-download Microsoft JDBC Driver for SQL Server and copy mssql-jdbc-8.2.2.jre8.jar to ```%SERVER_HOME\lib```
+download Microsoft JDBC Driver for SQL Server and copy mssql-jdbc-8.2.2.jre8.jar to ```%SERVER_HOME/lib```
 https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver15
 
 # Tomcat and Postgres
 
 ## server.xml  
 
-Location: ```%SERVER_HOME\conf\server.xml```
+Location: ```%SERVER_HOME/conf/server.xml```
 
 ```
     <<Resource name="jdbc/ProcessEngine"
