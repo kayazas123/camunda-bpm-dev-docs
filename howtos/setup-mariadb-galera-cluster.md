@@ -69,3 +69,7 @@ Set the `jdbcUrl` to:
 ```
 jdbc:mariadb:failover://localhost:3306,localhost:13306,localhost:33306/process-engine
 ```
+
+## Resources
+* https://github.com/camunda-ci/camunda-docker-ci-mariadb/blob/master/k8s/docker-compose.yaml
+* https://ci.cambpm.camunda.cloud/job/7.14/job/7.14-engine-UNIT-mariadb-galera/lastBuild/console
