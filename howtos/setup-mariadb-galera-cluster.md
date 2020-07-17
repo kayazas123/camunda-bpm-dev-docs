@@ -63,3 +63,9 @@ master3:
 ## Execute the compose
 In the directory where the compose file is stored, execute the following:
 ```docker-compose up -d```
+
+## Adjust jdbcUrl
+Set the `jdbcUrl` to:
+```
+jdbc:mariadb:failover://localhost:3306,localhost:13306,localhost:33306/process-engine
+```
