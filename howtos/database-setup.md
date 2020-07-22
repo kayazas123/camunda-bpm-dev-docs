@@ -9,6 +9,7 @@ These site collects information's about how to combine application server with d
 * [Wildfly and MariaDB](#wildfly-and-mariadb)
 * [Tomcat and Postgresql](#tomcat-and-postgresql)
 * [Tomcat and MSSQL](#tomcat-and-mssql)
+* [Tomcat and Oracle](#tomcat-and-oracle)
 
 
 # JBoss and Postgresql
@@ -385,7 +386,7 @@ Location: ```%SERVER_HOME/conf/server.xml```
 download Microsoft JDBC Driver for SQL Server and copy mssql-jdbc-8.2.2.jre8.jar to ```%SERVER_HOME/lib```
 https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-ver15
 
-# Tomcat and Postgres
+# Tomcat and Oracle
 
 ## server.xml  
 
