@@ -155,7 +155,7 @@ EE job successfully run - https://ci.cambpm.camunda.cloud/job/7.11/job/7.11-plat
 
 ## Release the Patch Version in JIRA
 
-Select the released version in [JIRA](https://app.camunda.com/jira/browse/CAM?selectedTab=com.atlassian.jira.jira-projects-plugin:versions-panel&subset=-1)  click Release and enter the release date.
+Select the released version in [JIRA](https://app.camunda.com/jira/browse/CAM?selectedTab=com.atlassian.jira.jira-projects-plugin:versions-panel&subset=-1) click Release and enter the release date.
 
 On this page you will find the link to the JIRA release notes.
 

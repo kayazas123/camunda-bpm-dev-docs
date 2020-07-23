@@ -745,7 +745,10 @@ Note: "showAlpha" must be set to false when releasing minor
 
 ## Release Jira
 
-Talk to EM or DE.
+In JIRA you will need to release the version of the current release. To do that, go to the [releases](https://jira.camunda.com/projects/CAM?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page) page of the CAM project and open the version that you want to release. Check that the number of issues in this version is correct. When everything looks ok, hit the "Release" button at the top of the page and enter the release date.
+
+Check if all alpha versions for this minor release are also released and if not, release them too with their respective release dates.
+If you have any questions, approach EM or DE.
 
 ## Forward Security Reports
 

@@ -435,7 +435,7 @@ Make sure that you have set the right minor version within all the links. (e.g. 
 adjust the version in the URL, e.g. 7.9 or 7.12
 
 # Release JIRA
-The goal for releasing the JIRA is to add the version you would like to release to issues which have already been closed. To achieve this, please make sure that the alpha version you would like to release [already exists](https://app.camunda.com/jira/browse/CAM/?selectedTab=com.atlassian.jira.jira-projects-plugin:versions-panel). If not, ask Michael, Roman or Thorben to create this alpha version in JIRA.
+The goal for releasing the JIRA is to add the version you would like to release to issues which have already been closed. To achieve this, please make sure that the alpha version you would like to release [already exists](https://app.camunda.com/jira/browse/CAM/?selectedTab=com.atlassian.jira.jira-projects-plugin:versions-panel). If not, all members of the Runtime team should have permissions to create versions.
 
 To add the release version to the respective "fixVersion" field of all issues which have already been closed, go to the [issues page](https://app.camunda.com/jira/issues) and make sure that the advanced search is enabled.
 
@@ -464,6 +464,8 @@ Perform a sanity check of the released issues by making sure that the `Fix Versi
 * current alpha version (e.g. 7.13.0-alpha2)
 * the current minor version (e.g. 7.13.0)
 * backport versions (optional, e.g. 7.12.3, 7.11.9)
+
+After the fixVersion has been adjusted correctly, you will need to release the JIRA version. Go to the [releases](https://jira.camunda.com/projects/CAM?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page) page of the CAM project and open the alpha version that you want to release. Check that the number of issues in this version is correct. When everything looks ok, hit the "Release" button at the top of the page and enter the release date.
 
 If you have any questions feel free to approach Thorben. If Thorben is not available, you can ask Michael and/or Roman.
 
