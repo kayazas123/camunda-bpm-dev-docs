@@ -18,36 +18,42 @@ These site collects information's about how to combine application server with d
 
 Location: ```%SERVER_HOME/standalone/configuration/standalone.xml```  
 ```
-<datasources>
-    <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
-        <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</connection-url>
-        <driver>h2</driver>
-        <security>
-            <user-name>sa</user-name>
-            <password>sa</password>
-        </security>
-    </datasource>
-    <datasource jta="true" jndi-name="java:jboss/datasources/ProcessEngine" pool-name="ProcessEngine" enabled="true" use-java-context="true" use-ccm="true">
-        <connection-url>jdbc:postgresql://192.168.178.109:5433/process-engine</connection-url>
-        <driver>postgresql</driver>
-        <security>
-            <user-name>camunda</user-name>
-            <password>camunda</password>
-        </security>
-    </datasource>
-    <drivers>
-        <driver name="h2" module="com.h2database.h2">
-            <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
-        </driver>
-        <driver name="postgresql" module="org.postgresql">
-            <xa-datasource-class>org.postgresql.ds.PGSimpleDataSource</xa-datasource-class>
-        </driver>
-    </drivers>
-</datasources>
+		<datasources>
+		    <datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
+		        <connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</connection-url>
+		        <driver>h2</driver>
+		        <security>
+		            <user-name>sa</user-name>
+		            <password>sa</password>
+		        </security>
+		    </datasource>
+		    <datasource jta="true" jndi-name="java:jboss/datasources/ProcessEngine" pool-name="ProcessEngine" enabled="true" use-java-context="true" use-ccm="true">
+		        <connection-url>jdbc:postgresql://portainer.camunda.loc:30066/process-engine</connection-url>
+		        <driver>postgresql</driver>
+		        <security>
+		            <user-name>camunda</user-name>
+		            <password>camunda</password>
+		        </security>
+		    </datasource>
+		    <drivers>
+		        <driver name="h2" module="com.h2database.h2">
+		            <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+		        </driver>
+		        <driver name="postgresql" module="org.postgresql">
+		            <xa-datasource-class>org.postgresql.ds.PGSimpleDataSource</xa-datasource-class>
+		        </driver>
+		    </drivers>
+		</datasources>
 ```
 
 ## jdbc driver
-copy the driver jar to ```%SERVER_HOME/modules/org/postgresql/main```
+Download: https://jdbc.postgresql.org/download.html
+Location: copy the driver jar to ```%SERVER_HOME/modules/org/postgresql/main```
+The following driver are compatible to your JDK version:
+|  Java 7  |  Java 8  |
+|----------|:--------:|
+| JDBC 4.1 | JDBC 4.2 |
+
 
 ## module.xml
 create the file module.xml in ```%SERVER_HOME/modules/org/postgresql/main``` with the following content. Check if resource root path matches the version of the downloaded driver jar.
@@ -58,7 +64,7 @@ create the file module.xml in ```%SERVER_HOME/modules/org/postgresql/main``` wit
 <module xmlns="urn:jboss:module:1.1" name="org.postgresql">
 
     <resources>
-        <resource-root path="postgresql-9.3-1102.jdbc4.jar"/>
+        <resource-root path="postgresql-42.2.14.jre7.jar"/>
         <!-- Insert resources here -->
     </resources>
     <dependencies>
