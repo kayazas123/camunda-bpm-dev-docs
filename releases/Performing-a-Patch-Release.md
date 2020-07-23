@@ -11,17 +11,17 @@ The release procedure has 2 phases:
 - [ ] [Trigger the release build](#trigger-the-release-build)
 - [ ] [Update the Enterprise Download Page](#update-the-enterprise-download-page)
 - [ ] [Test the Release Build](#test-the-release-build)
-- [ ] [Unblock the Branch](#unblock-the-branch)
-- [ ] [Release Javadocs](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/releases/Performing-an-Alpha-Release.md#release-javadocs)
 - [ ] [Check the Docker Images](check-the-docker-images)
+- [ ] [Unblock the Branch](#unblock-the-branch)
 
 ## Phase 2: Publish the Release
 
+- [ ] [Release Javadocs](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/releases/Performing-an-Alpha-Release.md#release-javadocs)
 - [ ] [Release the Patch Version in JIRA](#release-the-patch-version-in-jira)
 - [ ] [Forward Security Reports](#forward-security-reports)
 - [ ] [Publish the Enterprise Download Page](#publish-the-enterprise-download-page)
 - [ ] [Inform the Support Team](#inform-the-support-team)
-- [ ] [Improve this guide](#improve-this-guide) (*)
+- [ ] [Improve this guide](#improve-this-guide)
 
 ## Check Preconditions
 
@@ -30,15 +30,15 @@ The release procedure has 2 phases:
 
 If you encounter any problem, please contact the @cambpm-release-manager 
 
+
 ## Close the Branch
 
 Send an message to #cambpm-announcements in Slack with /cc to @cambpm-dri:
 
 ```
-Hi Team,
-
-please stop pushing to the 7.7 branch since we are going to build a patch release.
+Hi Team (@here), please stop pushing to the 7.X / 7.X / 7.X branches since we are going to build a patch release.
 ```
+
 
 ## Trigger the Release Build
 
@@ -69,6 +69,7 @@ https://release.cambpm.camunda.cloud/view/Release-7.11/
 
 If you encounter any problem, please contact the @cambpm-dri
 
+
 ## Update the Enterprise Download Page
 
 Add the latest release to the following page [`camunda-docs-static/enterprise/content/download.md`](https://github.com/camunda/camunda-docs-static/blob/master/enterprise/content/download.md).
@@ -76,31 +77,59 @@ Add the latest release to the following page [`camunda-docs-static/enterprise/co
 All releases are handled as HUGO page variables in the document header. Add the release in the following format:
 
 ```
-  branches:
-  - branch: "7.7.1"
-    releases:
-    - number: "7.7.1"
-      note: "https://app.camunda.com/jira/secure/ReleaseNote.jspa?projectId=10230&version=14896"
-      date: "2017.07.11"
+    - branch: "7.13"
+      releases:
+        - number: "7.13.3"
+          note: "https://jira.camunda.com/secure/ReleaseNote.jspa?projectId=10230&version=16195"
+          date: "2020.07.22"
+          excludeservers:
+```
+
+If you create a patch release for the latest stable version adjust the initial selected version too:
+
+```
+  selected:
+    branch: "7.13"
+    version: "7.13.3"
+    server: "run"
 ```
 
 Commit the changes and build the enterprise page:
 
 ```
-git commit -m "chore(download): add 7.7.1 to download page"
+git commit -m "chore(download): update download table"
 
 git push origin master
 ```
 
 Review your commit on http://stage.docs.camunda.org/enterprise/download/
 
+
 ## Test the Release Build
 
-For each application server one developer should perform a test. Download the release artifacts from http://stage.docs.camunda.org/enterprise/download/
+Perform a test for each application server per version. Download the release artifacts from http://stage.docs.camunda.org/enterprise/download/  
+
+### Preparations
+
+After the release has been build you can check the status of the CI again --> https://ci.cambpm.camunda.cloud/view/all/job/7.13/view/Broken/    
+*Heads-up*: The Docker QA job in the release pipeline only triggers the actual job and does not indicate the fail/success of the actual job. You can find the job here: ```https://ci.cambpm.camunda.cloud/view/all/job/7.13/job/7.13-platform-docker-qa/```. Retrigger the job in case of problems.
+
+#### Portainer
+
+For IBM Webspherre and Oracle WebLogic use the QA templates in [Portainer](http://192.168.0.11:9000/). The templates are called:  
+* WebLogic 12R2 (autosetup): Camunda BPM 7.x.x 
+* WebSphere 9.0 (autosetup): Camunda BPM 7.x.x 
+
+Before you start you have to promote the released versions of the Docker images in the [Portainer Templates Repository](https://github.com/camunda-ci/portainer-templates). You can find an example commit here: https://github.com/camunda-ci/portainer-templates/commit/0f25b5860edd6b590605b3c8cbe0daff557da97f
+
+Find more information about the setup of WebSpherre and Weblogic in the [howtos guide](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/howtos/was-wls-autosetup.md).
+
+#### Spring
 
 If you want to test Spring Boot Starter follow the [spring-boot-start setup guide](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/howtos/setup-camunda-spring-boot.md#howto-setup-camunda-springboot) to start the Camunda Platform with Spring Boot. 
 
 ### Standard Regression Test
+
 1. Download the release artifact from the enterprise download page
 2. Combine the platform with a database of choice.
 3. Start the platform  
@@ -128,30 +157,35 @@ If you want to test Spring Boot Starter follow the [spring-boot-start setup guid
 6.8 Add a variable to the process instance  
 
 ### Release Specific Test
+
 According to the implemented bug fixes choose some of the fixes to test them manually. 
 If you don't know wich fixes are worth the effort use the following rule of thumb: 
 * Prefer UI fixes as the test coverage is usually lower compared to backend fixes. Use different browser for the test.
 * Prefer fixes related to customer support issues as our customers expect that these fixes are working correctly.
 * Prefer fixes that came from critical or blocking bug reports
 
+
+## Check the Docker Images
+
+Verify that the docker images CE and EE are built.
+
+EE job successfully run - https://ci.cambpm.camunda.cloud/job/7.11/job/7.11-platform-docker-ee/ (Example, adjust the version accordingly.)
+
+
 ## Unblock the Branch
 
 If everything is satisfying with the release, send an message to #cambpm-announcements in Slack:
 
 ```
-Hi Team,
-
-the release test passed, you can commit the 7.7 branch again :)
+Hi Team, the release test passed, you can commit the 7.X branch again :)
 
 ```
 
+
 ## Release Javadocs
+
 Follow https://github.com/camunda/camunda-bpm-dev-docs/blob/master/releases/Performing-an-Alpha-Release.md#release-javadocs
 
-## Check the Docker Images
-Verify that the docker images CE and EE are built.
-
-EE job successfully run - https://ci.cambpm.camunda.cloud/job/7.11/job/7.11-platform-docker-ee/ (Example, adjust the version accordingly.)
 
 ## Release the Patch Version in JIRA
 
@@ -174,11 +208,15 @@ project = CAM AND fixVersion = <released version> AND type = "Security Report"
 Once the release test has been done, release the enterprise docs by triggering the following build:
 https://ci.cambpm.camunda.cloud/view/Docs/job/docs/job/camunda-docs-release%20(enterprise)/
 
+
 ## Release the Documentation (Manual)
+
 Once the release has been done, Check for update scripts for patches and trigger the following build with respective version 
-https://ci.cambpm.camunda.cloud/view/Docs/job/docs/job/camunda-docs-release%20(manual-7.11)/
+https://ci.cambpm.camunda.cloud/view/Docs/job/docs/job/camunda-docs-release%20(manual-7.13)/
+
 
 ## Inform the Support Team
+
 Add information about the each patch release accroding to this page
 https://app.camunda.com/confluence/display/SUP/Support+Services
 
@@ -196,6 +234,7 @@ Please inform our customers.
 Best,
 XX
 ```
+
 
 ## Improve this Guide
 
