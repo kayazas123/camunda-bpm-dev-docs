@@ -47,12 +47,12 @@ Location: ```%SERVER_HOME/standalone/configuration/standalone.xml```
 ```
 
 ## jdbc driver
-Download: https://jdbc.postgresql.org/download.html
-Location: copy the driver jar to ```%SERVER_HOME/modules/org/postgresql/main```
+Download: https://jdbc.postgresql.org/download.html  
+Location: copy the driver jar to ```%SERVER_HOME/modules/org/postgresql/main```  
 The following driver are compatible to your JDK version:
-|  Java 7  |  Java 8  |
-|----------|:--------:|
-| JDBC 4.1 | JDBC 4.2 |
+|  Java 7  |  Java 8 (and higher)  |
+|----------|:---------------------:|
+| JDBC 4.1 | JDBC 4.2              |
 
 
 ## module.xml
