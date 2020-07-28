@@ -96,11 +96,11 @@ Location: ```%SERVER_HOME/standalone/configuration/standalone.xml```
         </security>
     </datasource>
     <datasource jta="true" jndi-name="java:jboss/datasources/ProcessEngine" pool-name="ProcessEngine" enabled="true" use-java-context="true" use-ccm="true">
-        <connection-url>jdbc:mysql://localhost:3306/process-engine</connection-url>
+        <connection-url>jdbc:mysql://portainer.camunda.loc:30093/process-engine</connection-url>
         <driver>mysql</driver>
         <security>
-            <user-name>root</user-name>
-            <password></password>
+            <user-name>camunda</user-name>
+            <password>camunda</password>
         </security>                   
     </datasource>               
     <datasource jta="true" jndi-name="java:jboss/datasources/CycleDS" pool-name="CycleDS" enabled="true" use-java-context="true" use-ccm="true">
