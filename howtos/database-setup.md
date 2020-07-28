@@ -79,6 +79,8 @@ create the file module.xml in ```%SERVER_HOME/modules/org/postgresql/main``` wit
 
 # JBoss and MYSQL
 
+Note: While creating the stack on portainer for mysql, the configuration value to use for READ-COMMITTED is 'READ-COMMITTED'
+
 ## standalone.xml
 
 Location: ```%SERVER_HOME/standalone/configuration/standalone.xml```  
@@ -328,6 +330,8 @@ create the file module.xml in ```%SERVER_HOME/modules/com/oracle/main``` with th
 
 
 # WildFly and MariaDB
+
+Note: While creating the stack on portainer for MariaDB, the configuration value to use for READ-COMMITTED is 'READ-COMMITTED'
 
 Create new module folder structure and add a module.xml
 ```
