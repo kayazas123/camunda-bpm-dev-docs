@@ -4,7 +4,7 @@ These site collects information's about how to combine application server with d
 
 * [JBoss and Postgresql](#jboss-and-postgresql)
 * [JBoss and MYSQL](#jboss-and-mysql)
-* [JBoss and ORACLE](#jboss-and-oracle)
+* [JBoss and Oracle](#jboss-and-oracle)
 * [Wildfly and Postgresql](#wildfly-and-postgresql)
 * [Wildfly and Oracle](#wildfly-and-oracle)
 * [Wildfly and MariaDB](#wildfly-and-mariadb)
@@ -152,34 +152,34 @@ create the file module.xml in ```%SERVER_HOME/modules/com/mysql/main``` with the
 Location: ```%SERVER_HOME/standalone/configuration/standalone.xml```  
 
 ```
+
 <datasources>
-	<datasources>
-		<datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
-		<connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</connection-url>
-		<driver>h2</driver>
-		<security>
-		    <user-name>sa</user-name>
-		    <password>sa</password>
-		</security>
-	    </datasource>
-	    <datasource jndi-name="java:jboss/datasources/ProcessEngine" pool-name="ProcessEngine" enabled="true" use-java-context="true">
-		<connection-url>jdbc:oracle:thin:@portainer.camunda.loc:30087:XE</connection-url>
-		<driver>oracle</driver>
-		<security>
-		    <user-name>camunda</user-name>
-		    <password>camunda</password>
-		</security>
-	    </datasource>
-	    <drivers>
-		 <driver name="h2" module="com.h2database.h2">
-		    <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
-	    </driver>
-		<driver name="oracle" module="com.oracle">
-		    <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
-		</driver>
-	    </drivers>
-	</datasources>
+	<datasource jndi-name="java:jboss/datasources/ExampleDS" pool-name="ExampleDS" enabled="true" use-java-context="true">
+	<connection-url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE</connection-url>
+	<driver>h2</driver>
+	<security>
+	    <user-name>sa</user-name>
+	    <password>sa</password>
+	</security>
+    </datasource>
+    <datasource jndi-name="java:jboss/datasources/ProcessEngine" pool-name="ProcessEngine" enabled="true" use-java-context="true">
+	<connection-url>jdbc:oracle:thin:@portainer.camunda.loc:30087:XE</connection-url>
+	<driver>oracle</driver>
+	<security>
+	    <user-name>camunda</user-name>
+	    <password>camunda</password>
+	</security>
+    </datasource>
+    <drivers>
+	 <driver name="h2" module="com.h2database.h2">
+	    <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+    </driver>
+	<driver name="oracle" module="com.oracle">
+	    <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+	</driver>
+    </drivers>
 </datasources>
+
 ```
 
 ## jdbc driver
