@@ -427,6 +427,14 @@ On the new branch, bump the version of the standalone webapps as follows:
 ...
 ```
 
+### Verify the version compatibility matrixes are up to date
+
+Verify that the version compatibility matrix of each sideproject is containing the latest releases of the projects and latest supported spring boot/assertj version:
+
+* https://docs.camunda.org/manual/develop/user-guide/spring-boot-integration/version-compatibility/
+* https://docs.camunda.org/manual/develop/user-guide/testing/#assertions-version-compatibility
+* https://docs.camunda.org/manual/develop/user-guide/ext-client/compatibility-matrix/
+
 ### Adjust config on branch
 
 On the new branch, adjust the configuration. Open the file `config.yaml` with an editor and edit it as follows:
