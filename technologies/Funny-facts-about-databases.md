@@ -26,3 +26,10 @@ Docs: https://docs.oracle.com/en/database/oracle/oracle-database/19/admin/managi
 Oracle treats strings with zero length (i.e. `""`) as `null`. This becomes relevant when empty strings are stored in the database and not null-checked upon retrieval. (See https://jira.camunda.com/browse/CAM-11448)
 
 Docs: https://docs.oracle.com/database/121/SQLRF/sql_elements005.htm
+
+### MSSQL
+
+By default the collation is case insensitive.
+That can lead to OptimisticLockingException if two variables "Count" and "count" are set in the same process for example
+
+Docs: https://docs.microsoft.com/en-us/sql/relational-databases/collations/set-or-change-the-server-collation?view=sql-server-ver15#setting-the-server-collation-in-managed-instance
