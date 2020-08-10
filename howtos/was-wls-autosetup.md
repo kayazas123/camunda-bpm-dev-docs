@@ -11,7 +11,7 @@ This guide documents noteworthy hints to use auto-setup containers on [portainer
 
 ## Oracle WebLogic 12R2
 ### Supported Databases
-* Oracle 11g / 12c / 18c
+* Oracle 11g / 12c / 18c / 19c
 
 > *Heads-Up:* Please keep in mind that JDBC Batch Processing must be [switched off for Oracle 11g](https://docs.camunda.org/manual/latest/user-guide/process-engine/database/#jdbc-batch-processing).
 
@@ -25,8 +25,8 @@ This guide documents noteworthy hints to use auto-setup containers on [portainer
 #### Step 2: Create a database container
 1. Click in the sidebar on "App Templates"
 1. Scroll down to the Oracle templates
-2. Click e. g. on the template "Oracle 12c"
-3. Select a name that allows third-parties to trace the container back to you (e. g. "tassilo-oracle12c")
+2. Click e. g. on the template "Oracle 19c"
+3. Select a name that allows third-parties to trace the container back to you (e. g. "tassilo-oracle19c")
 4. Disable "Enable access control"
 5. Click on "Deploy the Stack"
 ![wls step2 a](./img/autosetup-wls-step2a.png)
@@ -35,14 +35,16 @@ This guide documents noteworthy hints to use auto-setup containers on [portainer
    * "portainer.camunda.loc" is the host name
    * "30079" is the exposed port
 ![wls step2 b](./img/autosetup-wls-step2b.png)
+8. In the "Containers" page, open your container by clicking on the name
+9. In the "Container details" tile, copy the "ORACLE_SID" property (this is the database name)
 
 #### Step 3: Create the server container
 1. Click in the sidebar on "App Templates"
-2. Scroll down to "WebLogic 12R2 + Oracle 18c (autosetup)"
+2. Scroll down to "WebLogic 12R2 (autosetup): Camunda BPM 7.14.x"
 3. Select a name that allows third-parties to trace the container back to you (e. g. "tassilo-wls")
 4. Add the database information
    * Add the database hostname and the port of your container
-   * Add the database name (it is usually "XE")
+   * Add the database name (it is usually one of "XE", "ORCL" or "ORCLDB")
 5. Disable "Enable access control"
 6. Click on "Deploy the Stack"
 ![wls step3](./img/autosetup-wls-step3.png)
