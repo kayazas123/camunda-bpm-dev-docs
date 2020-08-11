@@ -11,6 +11,7 @@ These site collects information's about how to combine application server with d
 * [Tomcat and Postgresql](#tomcat-and-postgresql)
 * [Tomcat and MSSQL](#tomcat-and-mssql)
 * [Tomcat and Oracle](#tomcat-and-oracle)
+* [Camunda Run and Oracle](#camundarun-and-oracle)
 
 
 # JBoss and Postgresql
@@ -485,3 +486,32 @@ Location: ```%SERVER_HOME/conf/server.xml```
 Download a proper jdbc driver (e.g. ojdbc7.jar)
 copy the jdbc driver to ```%SERVER_HOME/lib```
 
+
+# Camunda Run and Oracle
+
+## default.yml  
+
+Location: ```%SERVER_HOME/configuration/default.xml```
+
+```
+camunda.bpm:
+  admin-user:
+    id: demo
+    password: demo
+  run:
+    cors:
+      enabled: true
+      allowed-origins: "*"
+
+spring.datasource:
+  url: jdbc:oracle:thin:@portainer.camunda.loc:30026:XE
+  driver-class-name: oracle.jdbc.OracleDriver
+  username: camunda
+  password: camunda
+ ``` 
+  
+  ## jdbc driver  
+
+Download a proper jdbc driver (e.g. ojdbc8.jar)
+copy the jdbc driver to ```%SERVER_HOME/userlib```
+  
