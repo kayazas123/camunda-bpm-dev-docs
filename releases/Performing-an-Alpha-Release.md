@@ -26,6 +26,7 @@ Steps:
 - [ ] [Pick Next Release Manager](#pick-next-release-manager) (*)
 
 Steps marked with (*) are to be performed by the "Release Manager".
+
 MS = Michael Schöttes \
 TL = Thorben Lindhauer \
 RS = Roman Smirnov \
