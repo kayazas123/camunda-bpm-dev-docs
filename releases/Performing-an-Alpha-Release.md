@@ -171,8 +171,8 @@ For each container (including Spring Boot & Run), one developer should perform a
      * You can find the job here: `https://ci.cambpm.camunda.cloud/view/all/job/<minor-version>/job/<minor-version>-platform-docker-qa/`
        * **Heads-up:** The Docker QA job in the release pipeline only triggers the actual job and does not indicate the fail/success of the actual job
      * If the job continues to fail, you could try to build & push the images locally from your machine. Please see the documentation about [Manually Build & Push the Docker QA Images](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/howtos/manually-build-docker-qa-images.md)
-  2. Promote the versions of the Docker images in the [Portainer Templates Repository](https://github.com/camunda-ci/portainer-templates).
-     * You can find an example commit here: https://github.com/camunda-ci/portainer-templates/commit/d94033
+  2. Promote the versions of the Docker images in the [Portainer Templates Repository](https://github.com/camunda/portainer-templates).
+     * You can find an example commit here: https://github.com/camunda/portainer-templates/commit/d94033
   3. To confirm that everything works as expected, go to Portainer, run a container for each image, and check the "Stack Details". You should validate the right version is picked up, and the container is "runnable". Please see the following screenshot:\
    ![Portainer Stack Details](https://raw.githubusercontent.com/camunda/camunda-bpm-dev-docs/master/howtos/img/manually-build-docker-qa-images-portainer-stack-details.png)
      * The step requires a VPN connection. Find all the details here: https://confluence.camunda.com/display/ADMIN/VPN
@@ -187,8 +187,8 @@ There won't be any Docker stack files for the new minor version in the Portainer
 
 To make the new WAS & WLS Docker QA images available on Portainer, perform the following steps:
 
-1. Add the new Docker stack files for WAS & WLS. You can use [this commit](https://github.com/camunda-ci/portainer-templates/commit/b0cd9b048e25820b0e4215b7522bb8fa3f563151) as an example.
-2. Include the new stacks in the lists of stack templates, like in [this commit](https://github.com/camunda-ci/portainer-templates/commit/7efd7a5f1e5b454c8a33dd7f8ecbb4e30a8eab66).
+1. Add the new Docker stack files for WAS & WLS. You can use [this commit](https://github.com/camunda/portainer-templates/commit/b0cd9b048e25820b0e4215b7522bb8fa3f563151) as an example.
+2. Include the new stacks in the lists of stack templates, like in [this commit](https://github.com/camunda/portainer-templates/commit/7efd7a5f1e5b454c8a33dd7f8ecbb4e30a8eab66).
 
 _Note: The changes can be made in a single commit._
 

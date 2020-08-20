@@ -120,7 +120,7 @@ For IBM Webspherre and Oracle WebLogic use the QA templates in [Portainer](http:
 * WebLogic 12R2 (autosetup): Camunda BPM 7.x.x 
 * WebSphere 9.0 (autosetup): Camunda BPM 7.x.x 
 
-Before you start you have to promote the released versions of the Docker images in the [Portainer Templates Repository](https://github.com/camunda-ci/portainer-templates). You can find an example commit here: https://github.com/camunda-ci/portainer-templates/commit/0f25b5860edd6b590605b3c8cbe0daff557da97f
+Before you start you have to promote the released versions of the Docker images in the [Portainer Templates Repository](https://github.com/camunda/portainer-templates). You can find an example commit here: https://github.com/camunda/portainer-templates/commit/0f25b5860edd6b590605b3c8cbe0daff557da97f
 
 Find more information about the setup of WebSpherre and Weblogic in the [howtos guide](https://github.com/camunda/camunda-bpm-dev-docs/blob/master/howtos/was-wls-autosetup.md).
 

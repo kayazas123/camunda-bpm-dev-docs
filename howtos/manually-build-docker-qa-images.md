@@ -37,11 +37,11 @@ Find all the details here: https://confluence.camunda.com/display/ADMIN/VPN
      * https://registry.camunda.cloud/harbor/projects/6/repositories/team-cambpm%2Fweblogic12r2
      * https://registry.camunda.cloud/harbor/projects/6/repositories/team-cambpm%2Fwebsphere9
 8. Promote the version of the Docker image in the [Portainer Templates Repository].
-   * You can find an example commit here: https://github.com/camunda-ci/portainer-templates/commit/d94033
+   * You can find an example commit here: https://github.com/camunda/portainer-templates/commit/d94033
 9. To confirm that everything works as expected, go to Portainer, run a container for each image, and check the "Stack Details". You should validate the right version is picked up, and the container is "runnable". Please see the following screenshot:\
    ![Portainer Stack Details]
    * The step requires a VPN connection
 
 [Jenkins Job]: https://ci.cambpm.camunda.cloud/view/all/job/7.13/job/7.13-platform-docker-qa/
-[Portainer Templates Repository]: https://github.com/camunda-ci/portainer-templates
+[Portainer Templates Repository]: https://github.com/camunda/portainer-templates
 [Portainer Stack Details]: https://raw.githubusercontent.com/camunda/camunda-bpm-dev-docs/master/howtos/img/manually-build-docker-qa-images-portainer-stack-details.png
